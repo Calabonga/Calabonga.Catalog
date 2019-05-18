@@ -3,3 +3,6 @@
 
 # Скриншот с видео
 ![Видео](https://github.com/Calabonga/Calabonga.Catalog/blob/master/Presentation/Calabonga.Catalog.png)
+
+# Статья в блоге
+Описание проекта, а также возможность связаться с автором есть в блоге. Статья описывающая данный репозиторий доступна в [блоге](https://www.calabonga.net/blog/post/sozdaem-katalog-tovarov-na-asp-net-core).
