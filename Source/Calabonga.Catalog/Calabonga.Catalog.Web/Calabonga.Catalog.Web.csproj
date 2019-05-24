@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Projects\Calabonga.Catalog\Calabonga.Catalog\Calabonga.Catalog.Web\Calabonga.Catalog.Web.xml</DocumentationFile>
+    <DocumentationFile>Calabonga.Catalog.Web.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
