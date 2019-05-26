@@ -508,6 +508,64 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CategoriesController">
+            <summary>
+            Categories controller
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Controllers.CategoryCreateViewModel,Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryViewModel">
+            <summary>
+            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel">
+            <summary>
+            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel.Name">
+            <summary>
+            Name of the catalog
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel.Description">
+            <summary>
+            Description for current catalog
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryValidator">
+            <summary>
+            // Calabonga: update summary (2019-05-26 12:33 CategoriesController)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory">
+            <summary>
+            // Calabonga: update summary (2019-05-26 12:36 CategoriesController)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.GenerateForCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.GenerateForUpdate(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.LogsController">
+            <summary>
+            Logs controller
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.LogsController.#ctor(AutoMapper.IMapper,Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.ValuesController">
             <summary>
             Demo purposes only
@@ -1145,6 +1203,16 @@
             <param name="destination">Destination object</param>
             <param name="context">Resolution context</param>
             <returns>Destination object</returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.CategoryMapperConfiguration">
+            <summary>
+            // Calabonga: update summary (2019-05-26 12:44 CategoryMapperConfiguration)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.CategoryMapperConfiguration.#ctor">
+            <summary>
+            // Calabonga: update summary (2019-05-26 01:08 CategoryMapperConfiguration)
+            </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.LogMapperConfiguration">
             <summary>

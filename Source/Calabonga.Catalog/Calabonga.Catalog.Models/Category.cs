@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
+﻿using System.Collections.Generic;
 using Calabonga.Catalog.Models.Base;
 
 namespace Calabonga.Catalog.Models

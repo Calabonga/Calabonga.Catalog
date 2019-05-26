@@ -17,7 +17,7 @@ namespace Calabonga.Catalog.Web.AppStart
     /// </summary>
     public static class ConfigureServicesSwagger
     {
-        private const string AppTitle = "Microservice API";
+        private const string AppTitle = "Catalog API";
         private const string AppVersion = "1.0.0-alpha-1";
         private const string SwaggerConfig = "/swagger/v1/swagger.json";
         private const string SwaggerUrl = "api/manual";
@@ -35,7 +35,7 @@ namespace Calabonga.Catalog.Web.AppStart
                 {
                     Title = AppTitle,
                     Version = AppVersion,
-                    Description = "Microservice API documentation"
+                    Description = "Catalog API documentation"
                 });
                 options.ResolveConflictingActions(x => x.First());
                 options.DescribeAllEnumsAsStrings();
@@ -55,7 +55,7 @@ namespace Calabonga.Catalog.Web.AppStart
                     TokenUrl = $"{url}/auth/connect/token",
                     Scopes = new Dictionary<string, string>
                 {
-                { "api1", "API Default" }
+                { "api1", "Catalog API Default" }
                 }
                 });
 
@@ -75,7 +75,7 @@ namespace Calabonga.Catalog.Web.AppStart
         {
             settings.SwaggerEndpoint(SwaggerConfig, $"{AppTitle} v.{AppVersion}");
             settings.RoutePrefix = SwaggerUrl;
-            settings.DocumentTitle = "API documentation";
+            settings.DocumentTitle = "Catalog API documentation";
             settings.DefaultModelExpandDepth(0);
             settings.DefaultModelRendering(ModelRendering.Model);
             settings.DefaultModelsExpandDepth(0);

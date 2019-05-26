@@ -65,7 +65,7 @@ namespace Calabonga.Catalog.Web.AppStart
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "API Default")
+                new ApiResource("api1", "Catalog API Default")
             };
         }
     }
