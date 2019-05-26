@@ -12,8 +12,18 @@ namespace Calabonga.Catalog.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
+        #region Bussiness Entities
+
+        public DbSet<Category> Categories { get; set; }
+
+        /// <inheritdoc />
+        public DbSet<Product> Products { get; set; }
+        
+        #endregion
+
         #region System
 
+        /// <inheritdoc />
         public DbSet<Log> Logs { get; set; }
 
         public DbSet<ApplicationUserProfile> Profiles { get; set; }

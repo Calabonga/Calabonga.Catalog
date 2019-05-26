@@ -21,7 +21,7 @@ namespace Calabonga.Catalog.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Calabonga.Catalog.Data.ApplicationRole", b =>
+            modelBuilder.Entity("Calabonga.Category.Data.ApplicationRole", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -45,7 +45,7 @@ namespace Calabonga.Catalog.Data.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("Calabonga.Catalog.Data.ApplicationUser", b =>
+            modelBuilder.Entity("Calabonga.Category.Data.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -102,7 +102,7 @@ namespace Calabonga.Catalog.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Calabonga.Catalog.Data.ApplicationUserProfile", b =>
+            modelBuilder.Entity("Calabonga.Category.Data.ApplicationUserProfile", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -127,7 +127,7 @@ namespace Calabonga.Catalog.Data.Migrations
                     b.ToTable("Profiles");
                 });
 
-            modelBuilder.Entity("Calabonga.Catalog.Models.Log", b =>
+            modelBuilder.Entity("Calabonga.Category.Models.Log", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -265,9 +265,9 @@ namespace Calabonga.Catalog.Data.Migrations
                     b.ToTable("AutoHistory");
                 });
 
-            modelBuilder.Entity("Calabonga.Catalog.Data.ApplicationUserProfile", b =>
+            modelBuilder.Entity("Calabonga.Category.Data.ApplicationUserProfile", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationUser", "ApplicationUser")
+                    b.HasOne("Calabonga.Category.Data.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -275,7 +275,7 @@ namespace Calabonga.Catalog.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationRole")
+                    b.HasOne("Calabonga.Category.Data.ApplicationRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -283,7 +283,7 @@ namespace Calabonga.Catalog.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationUser")
+                    b.HasOne("Calabonga.Category.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -291,7 +291,7 @@ namespace Calabonga.Catalog.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationUser")
+                    b.HasOne("Calabonga.Category.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -299,12 +299,12 @@ namespace Calabonga.Catalog.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationRole")
+                    b.HasOne("Calabonga.Category.Data.ApplicationRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationUser")
+                    b.HasOne("Calabonga.Category.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -312,7 +312,7 @@ namespace Calabonga.Catalog.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("Calabonga.Catalog.Data.ApplicationUser")
+                    b.HasOne("Calabonga.Category.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

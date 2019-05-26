@@ -11,6 +11,14 @@ namespace Calabonga.Catalog.Data
     public interface IApplicationDbContext
     {
 
+        #region Bussiness Enitities
+
+        DbSet<Category> Categories { get; set; }
+
+        DbSet<Product> Products { get; set; }
+        
+        #endregion
+
         #region System
 
         DbSet<Log> Logs { get; set; }

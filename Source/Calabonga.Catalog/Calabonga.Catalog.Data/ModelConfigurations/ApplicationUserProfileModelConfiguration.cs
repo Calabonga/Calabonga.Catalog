@@ -6,7 +6,6 @@ namespace Calabonga.Catalog.Data.ModelConfigurations
     /// <summary>
     /// Entity Type Configuration for entity Person
     /// </summary>
-
     public class ApplicationUserProfileModelConfiguration : AuditableModelConfigurationBase<ApplicationUserProfile>
     {
         protected override void AddBuilder(EntityTypeBuilder<ApplicationUserProfile> builder)
