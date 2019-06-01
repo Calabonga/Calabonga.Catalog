@@ -1,6 +1,5 @@
 ﻿using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
-using Calabonga.EntityFrameworkCore.UnitOfWork;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Validations
 {
@@ -9,9 +8,6 @@ namespace Calabonga.Catalog.Web.Infrastructure.Validations
     /// </summary>
     public class LogValidator : EntityValidator<Log>
     {
-        /// <inheritdoc />
-        public LogValidator(IRepositoryFactory factory) : base(factory)
-        {
-        }
+        
     }
 }

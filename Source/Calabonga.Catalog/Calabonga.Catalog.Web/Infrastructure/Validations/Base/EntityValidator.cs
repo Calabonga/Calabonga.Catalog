@@ -10,16 +10,11 @@ namespace Calabonga.Catalog.Web.Infrastructure.Validations.Base
     public abstract class EntityValidator<TEntity> : IEntityValidator<TEntity> where TEntity : class
     {
         /// <inheritdoc />
-        protected EntityValidator(IRepositoryFactory factory)
+        protected EntityValidator()
         {
-            Repository = factory.GetRepository<TEntity>();
             ValidationContext = new ValidationContext();
         }
 
-        /// <summary>
-        /// repository of the entity
-        /// </summary>
-        protected IRepository<TEntity> Repository { get; }
 
         /// <summary>
         /// Common validations rules
@@ -125,12 +120,6 @@ namespace Calabonga.Catalog.Web.Infrastructure.Validations.Base
         public virtual IEnumerable<ValidationResult> ValidateOnInsertOrUpdate(TEntity entity)
         {
             return new List<ValidationResult>();
-        }
-
-        /// <inheritdoc />
-        public TEntity Find(object property)
-        {
-            return Repository.Find(property);
         }
 
         /// <inheritdoc />

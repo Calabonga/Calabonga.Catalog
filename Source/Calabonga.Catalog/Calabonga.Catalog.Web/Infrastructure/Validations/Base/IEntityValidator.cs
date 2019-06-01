@@ -38,12 +38,6 @@ namespace Calabonga.Catalog.Web.Infrastructure.Validations.Base
         IEnumerable<ValidationResult> ValidateOnInsertOrUpdate(TEntity entity);
 
         /// <summary>
-        /// Returns true if the entity exists
-        /// </summary>
-        /// <param name="property"></param>
-        TEntity Find(object property);
-
-        /// <summary>
         /// Add custom validation result
         /// </summary>
         /// <param name="validationResult"></param>

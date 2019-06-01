@@ -1692,13 +1692,8 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.#ctor">
             <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.Repository">
-            <summary>
-            repository of the entity
-            </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidateByOperationType(Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType,`0)">
             <summary>
@@ -1728,9 +1723,6 @@
             </summary>
             <param name="entity"></param>
             <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.Find(System.Object)">
-            <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.AddValidationResult(Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult)">
             <inheritdoc />
@@ -1816,12 +1808,6 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.Find(System.Object)">
-            <summary>
-            Returns true if the entity exists
-            </summary>
-            <param name="property"></param>
-        </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.AddValidationResult(Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult)">
             <summary>
             Add custom validation result
@@ -1893,19 +1879,19 @@
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator">
             <summary>
-            // Calabonga: update summary (2019-05-26 12:33 CategoriesController)
+            Category validator
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.ValidateOnInsertOrUpdate(Calabonga.Catalog.Models.Category)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.LogValidator">
             <summary>
             Validator for entity Log
             </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.LogValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
-            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels.ApplicationUserProfileViewModel">
             <summary>
@@ -2033,6 +2019,9 @@
             <summary>
             Description for current catalog
             </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel">
             <summary>

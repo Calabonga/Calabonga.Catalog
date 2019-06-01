@@ -1,18 +1,32 @@
-﻿using Calabonga.Catalog.Models;
+﻿using System.Collections.Generic;
+using Calabonga.Catalog.Data;
+using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Validations
 {
     /// <summary>
-    /// // Calabonga: update summary (2019-05-26 12:33 CategoriesController)
+    /// Category validator
     /// </summary>
     public class CategoryValidator : EntityValidator<Category>
     {
+        private readonly IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> _unitOfWork;
+
         /// <inheritdoc />
-        public CategoryValidator(IRepositoryFactory factory)
-            : base(factory)
+        public CategoryValidator(IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork)
         {
+            _unitOfWork = unitOfWork;
+        }
+
+        /// <inheritdoc />
+        public override IEnumerable<ValidationResult> ValidateOnInsertOrUpdate(Category entity)
+        {
+            var category = _unitOfWork.GetRepository<Category>().GetFirstOrDefault(predicate: x => x.Name.ToLower().Equals(entity.Name.ToLower()));
+            if (category != null)
+            {
+                yield return new ValidationResult($"Категория с именем  {entity.Name} уже существует");
+            }
         }
     }
 }
