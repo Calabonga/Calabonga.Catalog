@@ -7,7 +7,7 @@ namespace Calabonga.Catalog.Data.ModelConfigurations
     /// <summary>
     /// Entity Type Configuration for entity <see cref="Category"/>
     /// </summary>
-    public class CatalogModelConfiguration: IdentityModelConfigurationBase<Category>
+    public class CategoryModelConfiguration: IdentityModelConfigurationBase<Category>
     {
         /// <inheritdoc />
         protected override void AddBuilder(EntityTypeBuilder<Category> builder)

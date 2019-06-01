@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Calabonga.Catalog.Core\Calabonga.Catalog.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="IdentityServer4">
+      <HintPath>C:\Users\calab\.nuget\packages\identityserver4\2.4.0\lib\netstandard2.0\IdentityServer4.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

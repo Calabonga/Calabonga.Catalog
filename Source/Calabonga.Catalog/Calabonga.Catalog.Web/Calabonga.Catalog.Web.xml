@@ -513,49 +513,7 @@
             Categories controller
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Controllers.CategoryCreateViewModel,Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryViewModel">
-            <summary>
-            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel">
-            <summary>
-            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel.Name">
-            <summary>
-            Name of the catalog
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.CategoryUpdateViewModel.Description">
-            <summary>
-            Description for current catalog
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryValidator">
-            <summary>
-            // Calabonga: update summary (2019-05-26 12:33 CategoriesController)
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory">
-            <summary>
-            // Calabonga: update summary (2019-05-26 12:36 CategoriesController)
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.GenerateForCreate">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoryViewModelFactory.GenerateForUpdate(System.Guid)">
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.LogsController">
@@ -891,6 +849,20 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.Base.ViewModelFactory`3.GenerateForUpdate(System.Guid)">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory">
+            <summary>
+            // Calabonga: update summary (2019-05-26 12:36 CategoriesController)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForUpdate(System.Guid)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Helpers.AsyncHelper">
             <summary>
             Run Asynchronous methods as Synchronous.
@@ -1163,6 +1135,14 @@
             <param name="model"></param>
             <param name="entity"></param>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager">
+            <summary>
+            // Calabonga: update summary (2019-06-01 02:05 CategoriesController)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Category})">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ApplicationUserMapperConfiguration">
             <summary>
             Mapper Configuration for entity ApplicationUser
@@ -1210,9 +1190,7 @@
             </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.CategoryMapperConfiguration.#ctor">
-            <summary>
-            // Calabonga: update summary (2019-05-26 01:08 CategoryMapperConfiguration)
-            </summary>
+            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.LogMapperConfiguration">
             <summary>
@@ -1913,6 +1891,14 @@
             Indicates that we should break entity validation 
             </summary>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator">
+            <summary>
+            // Calabonga: update summary (2019-05-26 12:33 CategoriesController)
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.LogValidator">
             <summary>
             Validator for entity Log
@@ -2031,6 +2017,56 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels.RegisterViewModel.ConfirmPassword">
             <summary>
             Password confirmation
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel">
+            <summary>
+            ViewModel for Category creation
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel.Name">
+            <summary>
+            Name of the catalog
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel.Description">
+            <summary>
+            Description for current catalog
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel">
+            <summary>
+            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel.Name">
+            <summary>
+            Name of the catalog
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel.Description">
+            <summary>
+            Description for current catalog
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryViewModel">
+            <summary>
+            // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryViewModel.Name">
+            <summary>
+            Name of the catalog
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryViewModel.Description">
+            <summary>
+            Description for current catalog
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryViewModel.ProductsCount">
+            <summary>
+            Total count items in the category
             </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.LogViewModels.LogCreateViewModel">

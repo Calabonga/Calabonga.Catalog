@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using Calabonga.Catalog.Models.Base;
-using IdentityServer4.Models;
-
-namespace Calabonga.Catalog.Models
+﻿namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels
 {
     /// <summary>
-    /// Category for products
+    /// // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
     /// </summary>
-    public class Category: Identity
+    public class CategoryViewModel : ViewModelBase
     {
         /// <summary>
         /// Name of the catalog
@@ -20,9 +16,8 @@ namespace Calabonga.Catalog.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// Products collection
+        /// Total count items in the category
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
-
+        public int ProductsCount { get; set; }
     }
 }

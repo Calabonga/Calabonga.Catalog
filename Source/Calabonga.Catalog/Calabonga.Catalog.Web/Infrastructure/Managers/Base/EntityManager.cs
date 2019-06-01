@@ -68,9 +68,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers.Base
         #endregion
 
         #region OnEdit Handlers
-
-
-
+        
         /// <inheritdoc />
         public virtual void OnEditBeforeUpdate(TUpdateViewModel model, TEntity entity) { }
 
