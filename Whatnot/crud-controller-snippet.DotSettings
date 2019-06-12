@@ -1,0 +1,166 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Shortcut/@EntryValue">crud-controller</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Description/@EntryValue">Creates entity controller with writable CUD</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Controller for entity $Price$ with CRUD operations&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Prices$Controller : WritableController&lt;$Price$, $Price$CreateViewModel, $Price$UpdateViewModel, $Price$ViewModel, PagedListQueryParams&gt;&#xD;
+{&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public $Prices$Controller(IEntityManager&lt;$Price$, $Price$CreateViewModel, $Price$UpdateViewModel&gt; entityManager, IOptions&lt;CurrentAppSettings&gt; options, IUnitOfWork&lt;ApplicationDbContext, ApplicationUser, ApplicationRole&gt; unitOfWork, IAccountService accountService) &#xD;
+        : base(entityManager, options, unitOfWork, accountService)&#xD;
+    {&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+//---------------------------------------&#xD;
+//		move to folder "Infrastructure\ViewModels"&#xD;
+//---------------------------------------&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// ViewModel for $Price$ creation&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$CreateViewModel: IViewModel&#xD;
+{&#xD;
+}&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// ViewModel for $Price$ updating&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$UpdateViewModel: ViewModelBase&#xD;
+{&#xD;
+}&#xD;
+&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// ViewModel for $Price$ UI viewing&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$ViewModel: ViewModelBase&#xD;
+{&#xD;
+}&#xD;
+&#xD;
+//---------------------------------------&#xD;
+//		move to folder "Infrastructure\EntityMapper"&#xD;
+//---------------------------------------&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// Mapper Configuration for entity $Price$&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$MapperConfiguration : MapperConfigurationBase&#xD;
+{&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public $Price$MapperConfiguration()&#xD;
+    {&#xD;
+        CreateMap&lt;$Price$, $Price$ViewModel&gt;()&#xD;
+            .ForAllMembers(x=&gt;x.Ignore());&#xD;
+&#xD;
+        CreateMap&lt;$Price$CreateViewModel, $Price$&gt;()&#xD;
+            .ForAllMembers(x=&gt;x.Ignore());&#xD;
+&#xD;
+        CreateMap&lt;$Price$UpdateViewModel, $Price$&gt;()&#xD;
+            .ForAllMembers(x =&gt; x.Ignore());&#xD;
+&#xD;
+        CreateMap&lt;$Price$, $Price$UpdateViewModel&gt;()&#xD;
+            .ForAllMembers(x=&gt;x.Ignore());&#xD;
+&#xD;
+        CreateMap&lt;IPagedList&lt;$Price$&gt;, IPagedList&lt;$Price$ViewModel&gt;&gt;()&#xD;
+            .ConvertUsing&lt;PagedListConverter&lt;$Price$, $Price$ViewModel&gt;&gt;();&#xD;
+    }    &#xD;
+}&#xD;
+&#xD;
+//---------------------------------------&#xD;
+//		move to folder "Infrastructure\Managers"&#xD;
+//---------------------------------------&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// $Price$ entity manager&#xD;
+/// &lt;see cref="IViewModelFactory{TEntity,TCreateViewModel,TUpdateViewModel}"/&gt; implementation&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$Manager : EntityManager&lt;$Price$, $Price$CreateViewModel, $Price$UpdateViewModel&gt;&#xD;
+{&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public $Price$Manager(IMapper mapper, IViewModelFactory&lt;$Price$, $Price$CreateViewModel, $Price$UpdateViewModel&gt; viewModelFactory, IEntityValidator&lt;$Price$&gt; validator)&#xD;
+        : base(mapper, viewModelFactory, validator)&#xD;
+    {&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+//---------------------------------------&#xD;
+//		move to folder "Infrastructure\Factories"&#xD;
+//---------------------------------------&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// ViewModel Factory for $Price$ entity&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$ViewModelFactory: ViewModelFactory&lt;$Price$, $Price$CreateViewModel, $Price$UpdateViewModel&gt;&#xD;
+{&#xD;
+    private readonly IMapper _mapper;&#xD;
+	private readonly IRepository&lt;$Price$&gt; _repository;&#xD;
+&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public $Price$ViewModelFactory(IMapper mapper, IRepositoryFactory factory)&#xD;
+    {&#xD;
+        _mapper = mapper;&#xD;
+		_repository = factory.GetRepository&lt;$Price$&gt;();&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public override $Price$CreateViewModel GenerateForCreate()&#xD;
+    {&#xD;
+        return new $Price$CreateViewModel();&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public override $Price$UpdateViewModel GenerateForUpdate(Guid id)&#xD;
+    {&#xD;
+        var item = _repository.GetFirstOrDefault(predicate: x =&gt; x.Id == id);&#xD;
+        if (item == null)&#xD;
+        {&#xD;
+            throw new MicroserviceNotFoundException();&#xD;
+        }&#xD;
+        return _mapper.Map&lt;$Price$UpdateViewModel&gt;(item);&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+//---------------------------------------&#xD;
+//		move to folder "Infrastructure\Validations"&#xD;
+//---------------------------------------&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// Entity Validator for $Price$&#xD;
+/// &lt;/summary&gt;&#xD;
+public class $Price$Validator: EntityValidator&lt;$Price$&gt;&#xD;
+{&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public override IEnumerable&lt;ValidationResult&gt; ValidateOnInsert($Price$ entity)&#xD;
+    {&#xD;
+        return base.ValidateOnInsert(entity);&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public override IEnumerable&lt;ValidationResult&gt; ValidateOnInsertOrUpdate($Price$ entity)&#xD;
+    {&#xD;
+        return base.ValidateOnInsertOrUpdate(entity);&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;inheritdoc /&gt;&#xD;
+    public override IEnumerable&lt;ValidationResult&gt; ValidateOnUpdate($Price$ entity)&#xD;
+    {&#xD;
+        return base.ValidateOnUpdate(entity);&#xD;
+    }&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Categories/=Imported_00202018_002D12_002D19/@EntryIndexedValue">Imported 2018-12-19</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Categories/=Imported_00202019_002D05_002D02/@EntryIndexedValue">Imported 2019-05-02</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Categories/=Imported_00202019_002D06_002D01/@EntryIndexedValue">Imported 2019-06-01</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Field/=Price/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Field/=Price/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Field/=Prices/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6BCD69811FE6C44A9E2C103CACF8BA8B/Field/=Prices/Order/@EntryValue">1</s:Int64></wpf:ResourceDictionary>

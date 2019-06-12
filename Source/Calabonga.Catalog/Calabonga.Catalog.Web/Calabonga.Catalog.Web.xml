@@ -516,6 +516,74 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.PrductsController">
+            <summary>
+            Controller for entity Product with CRUD operations
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.PrductsController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Controllers.ProductCreateViewModel,Calabonga.Catalog.Web.Controllers.ProductUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductCreateViewModel">
+            <summary>
+            ViewModel for Product creation
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductUpdateViewModel">
+            <summary>
+            ViewModel for Product updating
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductViewModel">
+            <summary>
+            ViewModel for Product UI viewing
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductMapperConfiguration">
+            <summary>
+            Mapper Configuration for entity Product
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductMapperConfiguration.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductManager">
+            <summary>
+            Product entity manager
+            <see cref="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3"/> implementation
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Controllers.ProductCreateViewModel,Calabonga.Catalog.Web.Controllers.ProductUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Product})">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductViewModelFactory">
+            <summary>
+            ViewModel Factory for Product entity
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductViewModelFactory.GenerateForCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductViewModelFactory.GenerateForUpdate(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductValidator">
+            <summary>
+            Entity Validator for Product
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductValidator.ValidateOnInsert(Calabonga.Catalog.Models.Product)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductValidator.ValidateOnInsertOrUpdate(Calabonga.Catalog.Models.Product)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductValidator.ValidateOnUpdate(Calabonga.Catalog.Models.Product)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.LogsController">
             <summary>
             Logs controller
