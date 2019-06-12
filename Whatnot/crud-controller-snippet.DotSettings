@@ -18,18 +18,6 @@ public class $Prices$Controller : WritableController&lt;$Price$, $Price$CreateVi
     {&#xD;
         return base.FindEntity(id, model);&#xD;
     }&#xD;
-&#xD;
-	/// &lt;inheritdoc /&gt;&#xD;
-    protected override void ValidateRolesAndRights(Product entity)&#xD;
-    {&#xD;
-        base.ValidateRolesAndRights(entity);&#xD;
-    }&#xD;
-&#xD;
-    /// &lt;inheritdoc /&gt;&#xD;
-    protected override PermissionValidationResult ValidateQueryParams(PagedListQueryParams queryParams)&#xD;
-    {&#xD;
-        return base.ValidateQueryParams(queryParams);&#xD;
-    }&#xD;
 }&#xD;
 &#xD;
 //---------------------------------------&#xD;

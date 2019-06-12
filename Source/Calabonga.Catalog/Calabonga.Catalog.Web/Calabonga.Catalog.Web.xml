@@ -524,6 +524,17 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.LogsController.#ctor(AutoMapper.IMapper,Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.ProductsController">
+            <summary>
+            Controller for entity Product with CRUD operations
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.GetIncludes">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.ValuesController">
             <summary>
             Demo purposes only
@@ -558,6 +569,18 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Extensions.AutoMapperExtensions">
+            <summary>
+            Custom extension
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Extensions.AutoMapperExtensions.IgnoreAudit``2(AutoMapper.IMappingExpression{``0,``1})">
+            <summary>
+            
+            </summary>
+            <param name="source"></param>
             <returns></returns>
         </member>
         <member name="T:Calabonga.Catalog.Web.Extensions.DateTimeExtensions">
@@ -863,6 +886,20 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForUpdate(System.Guid)">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory">
+            <summary>
+            ViewModel Factory for Product entity
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForUpdate(System.Guid)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Helpers.AsyncHelper">
             <summary>
             Run Asynchronous methods as Synchronous.
@@ -1143,6 +1180,15 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Category})">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager">
+            <summary>
+            Product entity manager
+            <see cref="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3"/> implementation
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Product})">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ApplicationUserMapperConfiguration">
             <summary>
             Mapper Configuration for entity ApplicationUser
@@ -1198,6 +1244,14 @@
             </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.LogMapperConfiguration.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ProductMapperConfiguration">
+            <summary>
+            Mapper Configuration for entity Product
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ProductMapperConfiguration.#ctor">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.PagedListQueryParams">
@@ -1893,6 +1947,11 @@
             Validator for entity Log
             </summary>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.ProductValidator">
+            <summary>
+            Entity Validator for Product
+            </summary>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels.ApplicationUserProfileViewModel">
             <summary>
             Application User Profile
@@ -2126,6 +2185,86 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.LogViewModels.LogViewModel.ExceptionMessage">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel">
+            <summary>
+            ViewModel for Product creation
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.CategoryId">
+            <summary>
+            Category identifier
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.Price">
+            <summary>
+            Price
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel">
+            <summary>
+            ViewModel for Product updating
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.CategoryId">
+            <summary>
+            Category identifier
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Price">
+            <summary>
+            Price
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel">
+            <summary>
+            ViewModel for Product UI viewing
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.CategoryId">
+            <summary>
+            Category identifier
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.Price">
+            <summary>
+            Price
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.CategoryName">
+            <summary>
+            Category
             </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ViewModelBase">
