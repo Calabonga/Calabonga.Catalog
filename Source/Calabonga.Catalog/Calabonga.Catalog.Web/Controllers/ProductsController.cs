@@ -18,7 +18,8 @@ namespace Calabonga.Catalog.Web.Controllers
     public class ProductsController : WritableController<ApplicationDbContext, ApplicationUser, ApplicationRole, Product, ProductCreateViewModel, ProductUpdateViewModel, ProductViewModel, PagedListQueryParams>
     {
         /// <inheritdoc />
-        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork) : base(entityManager, unitOfWork)
+        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork) 
+            : base(entityManager, unitOfWork)
         {
         }
 

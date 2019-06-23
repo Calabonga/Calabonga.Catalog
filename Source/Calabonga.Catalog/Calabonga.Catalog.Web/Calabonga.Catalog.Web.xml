@@ -191,28 +191,13 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.GetIncludes">
             <inheritdoc />
         </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.ValuesController">
+        <member name="T:Calabonga.Catalog.Web.Controllers.ReviewsController">
             <summary>
-            Demo purposes only
+            Controller for entity Review with CRUD operations
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.Get">
-            <summary>
-            Returns a collection.
-            Demo purposes only
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.Get(System.Int32)">
-            <summary>
-            Return something by identifier
-            Demo purposes only
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
         </member>
         <member name="T:Calabonga.Catalog.Web.Extensions.AssemblyExtensions">
             <summary>
@@ -516,6 +501,20 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForUpdate(System.Guid)">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory">
+            <summary>
+            ViewModel Factory for Review entity
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory,Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForUpdate(System.Guid)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Helpers.AsyncHelper">
             <summary>
             Run Asynchronous methods as Synchronous.
@@ -677,6 +676,15 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager">
+            <summary>
+            Review entity manager
+            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Review})">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ApplicationUserMapperConfiguration">
             <summary>
             Mapper Configuration for entity ApplicationUser
@@ -740,6 +748,14 @@
             </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ProductMapperConfiguration.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ReviewMapperConfiguration">
+            <summary>
+            Mapper Configuration for entity Review
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ReviewMapperConfiguration.#ctor">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams">
@@ -1209,6 +1225,20 @@
             Entity Validator for Product
             </summary>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.ReviewValidator">
+            <summary>
+            Entity Validator for Review
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.ReviewValidator.ValidateOnInsert(Calabonga.Catalog.Models.Review)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.ReviewValidator.ValidateOnInsertOrUpdate(Calabonga.Catalog.Models.Review)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.ReviewValidator.ValidateOnUpdate(Calabonga.Catalog.Models.Review)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels.ApplicationUserProfileViewModel">
             <summary>
             Application User Profile
@@ -1522,6 +1552,89 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.CategoryName">
             <summary>
             Category
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel">
+            <summary>
+            ViewModel for Review creation
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel.Content">
+            <summary>
+            Message from user
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel.UserName">
+            <summary>
+            User name who post a review
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel.Rating">
+            <summary>
+            Rating for review (1-5)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel.ProductId">
+            <summary>
+            Product identifier
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel">
+            <summary>
+            ViewModel for Review updating
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.Content">
+            <summary>
+            Message from user
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.UserName">
+            <summary>
+            User name who post a review
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.Rating">
+            <summary>
+            Rating for review (1-5)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.ProductId">
+            <summary>
+            Product identifier
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel">
+            <summary>
+            ViewModel for Review UI viewing
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.Content">
+            <summary>
+            Message from user
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.UserName">
+            <summary>
+            User name who post a review
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.Rating">
+            <summary>
+            Rating for review (1-5)
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.ProductId">
+            <summary>
+            Product identifier
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.Product">
+            <summary>
+            Product
             </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Middlewares.ErrorHandlingMiddleware">

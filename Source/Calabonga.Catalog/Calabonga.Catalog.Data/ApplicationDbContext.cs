@@ -14,11 +14,15 @@ namespace Calabonga.Catalog.Data
 
         #region Bussiness Entities
 
+        /// <inheritdoc />
         public DbSet<Category> Categories { get; set; }
 
         /// <inheritdoc />
         public DbSet<Product> Products { get; set; }
-        
+
+        /// <inheritdoc />
+        public DbSet<Review> Reviews { get; set; }
+
         #endregion
 
         #region System

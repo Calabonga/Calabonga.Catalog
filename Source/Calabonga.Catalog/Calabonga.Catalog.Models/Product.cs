@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Models
@@ -6,7 +7,7 @@ namespace Calabonga.Catalog.Models
     /// <summary>
     /// Product
     /// </summary>
-    public class Product: Auditable
+    public class Product : Auditable
     {
         /// <summary>
         /// Name
@@ -33,5 +34,9 @@ namespace Calabonga.Catalog.Models
         /// </summary>
         public int? Price { get; set; }
 
+        /// <summary>
+        /// The collection of the reviews for current product
+        /// </summary>
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

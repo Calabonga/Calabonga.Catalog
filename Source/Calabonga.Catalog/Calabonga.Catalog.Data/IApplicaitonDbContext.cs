@@ -16,6 +16,8 @@ namespace Calabonga.Catalog.Data
         DbSet<Category> Categories { get; set; }
 
         DbSet<Product> Products { get; set; }
+
+        DbSet<Review> Reviews { get; set; }
         
         #endregion
 
