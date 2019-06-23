@@ -1,4 +1,5 @@
 ﻿using System;
+using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.LogViewModels
 {

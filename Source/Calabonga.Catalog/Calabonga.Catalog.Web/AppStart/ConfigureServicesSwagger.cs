@@ -18,7 +18,7 @@ namespace Calabonga.Catalog.Web.AppStart
     public static class ConfigureServicesSwagger
     {
         private const string AppTitle = "Catalog API";
-        private const string AppVersion = "1.0.0-alpha-1";
+        private const string AppVersion = "1.0.0-alpha-2";
         private const string SwaggerConfig = "/swagger/v1/swagger.json";
         private const string SwaggerUrl = "api/manual";
 

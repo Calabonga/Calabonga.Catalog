@@ -1,5 +1,5 @@
 ﻿using System;
-using Calabonga.Catalog.Models.Base;
+using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Data
 {

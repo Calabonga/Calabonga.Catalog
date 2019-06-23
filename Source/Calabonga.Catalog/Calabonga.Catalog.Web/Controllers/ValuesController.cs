@@ -1,12 +1,9 @@
 ﻿using System.Collections.Generic;
 using Calabonga.Catalog.Data;
-using Calabonga.Catalog.Web.Controllers.Base;
-using Calabonga.Catalog.Web.Infrastructure.Services;
-using Calabonga.Catalog.Web.Infrastructure.Settings;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Controllers;
 using Calabonga.OperationResultsCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace Calabonga.Catalog.Web.Controllers
 {
@@ -15,11 +12,10 @@ namespace Calabonga.Catalog.Web.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : UnitOfWorkController
+    public class ValuesController : UnitOfWorkController<ApplicationDbContext, ApplicationUser, ApplicationRole>
     {
         /// <inheritdoc />
-        public ValuesController(IOptions<CurrentAppSettings> options, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork, IAccountService accountService)
-            : base(options, unitOfWork, accountService)
+        public ValuesController(IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork) : base(unitOfWork)
         {
         }
 

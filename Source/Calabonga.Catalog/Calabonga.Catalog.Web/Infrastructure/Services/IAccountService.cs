@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Calabonga.Catalog.Data;
-using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators;
 using Calabonga.OperationResultsCore;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Services

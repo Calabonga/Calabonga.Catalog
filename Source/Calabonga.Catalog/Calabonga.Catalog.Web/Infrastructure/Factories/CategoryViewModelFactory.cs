@@ -3,9 +3,9 @@ using AutoMapper;
 using Calabonga.Catalog.Core.Exceptions;
 using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
-using Calabonga.Catalog.Web.Infrastructure.Factories.Base;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Factories
 {

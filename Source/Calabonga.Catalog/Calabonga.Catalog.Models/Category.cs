@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using Calabonga.Catalog.Models.Base;
-using IdentityServer4.Models;
+using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Models
 {

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Calabonga.Catalog.Models;
-using Calabonga.Catalog.Web.Infrastructure.Factories.Base;
-using Calabonga.Catalog.Web.Infrastructure.Managers.Base;
-using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Managers
 {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Calabonga.Catalog.Core;
-using Calabonga.Catalog.Web.Controllers.Base;
 using Calabonga.Catalog.Web.Infrastructure.Services;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.AccountViewModels;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Controllers;
 using Calabonga.OperationResultsCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

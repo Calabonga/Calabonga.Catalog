@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
-using Calabonga.Catalog.Web.Infrastructure.Managers.Base;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Catalog.Web.Infrastructure.DependencyInjection

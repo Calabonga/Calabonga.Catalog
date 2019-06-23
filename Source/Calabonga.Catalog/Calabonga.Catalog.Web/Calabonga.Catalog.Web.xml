@@ -164,356 +164,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase">
-            <summary>
-            Audit-able View Model Base
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.CreatedAt">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.CreatedBy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.UpdatedAt">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.UpdatedBy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.DeletedAt">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.DeletedBy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.ArchivedAt">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.AuditableViewModelBase.ArchivedBy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.Base.OperationResultController">
-            <summary>
-            Base controller for PricePoint wrapped with OperationResult
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultResponse``1(Calabonga.OperationResultsCore.OperationResult{``0})">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="operationResult"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultInfo``1(``0,System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultSuccess``1(``0)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultSuccess``1(``0,System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultWarning``1(``0,System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError``1(``0,System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError``1(``0,System.String[])">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="messages"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError``1(``0)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError(System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError``1(``0,System.Exception)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="exception"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultError``1(``0,System.String,System.Exception)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <param name="exception"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultObject``1(``0,System.String)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.OperationResultController.OperationResultResponse``1(``0,System.String,Calabonga.OperationResultsCore.OperationInfo,System.Exception)">
-            <summary>
-            OperationResult Response
-            </summary>
-            <param name="result"></param>
-            <param name="message"></param>
-            <param name="info"></param>
-            <param name="exception"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3">
-            <summary>
-            Represent read only operations controller for entity. It's not required special ViewModels and other things
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TQueryParams"></typeparam>
-            <typeparam name="TViewModel"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.#ctor(AutoMapper.IMapper,Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.CurrentMapper">
-            <summary>
-            Active AutoMapper instance
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.Repository">
-            <summary>
-            Current Entity repository
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.GetIncludes">
-            <summary>
-            If you need to include something you need override this method
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.GetAsync(System.Guid)">
-            <summary>
-            Returns entity from repository by identifier
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.GetPaged(`2)">
-            <summary>
-            Summary description will be replaced by IOperationFilter (swagger)
-            </summary>
-            <param name="queryParams"></param>
-            <returns></returns>
-            <response code="404">Unauthorized access detected or parameters are not valid</response>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.FilterItems(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},`2)">
-            <summary>
-            Return default predicate for filtering PagedList result
-            </summary>
-            <param name="predicate"></param>
-            <param name="queryParams"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.OrderByPropertyName">
-            <summary>
-            PropertyName for ordering by for enable pagination. You can override default behavior.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.ValidateQueryParams(`2)">
-            <summary>
-            Validate current user roles and access rights
-            </summary>
-            <param name="queryParams"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.ValidateUserRolesAndRights(`0)">
-            <summary>
-            Validate current user roles and access rights
-            </summary>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.EnsureUserCanAccess(System.Guid)">
-            <summary>
-            Ensure user identifier is equals authorized user id
-            </summary>
-            <param name="requestedUserId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.ReadOnlyController`3.ApplyDefaultSettings(`2)">
-            <summary>
-            Use CurrentAppSettings to apply some parameters when they are empty
-            </summary>
-            <param name="queryParams"></param>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController">
-            <summary>
-            Unit Of Work controller
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.#ctor(Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.LogInformation(System.String,System.Exception)">
-            <summary>
-            Allows to save data logs to the database Logs table
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.Log(Microsoft.Extensions.Logging.LogLevel,System.String,System.Exception)">
-            <summary>
-            Allows to save data logs to the database Logs table
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.AccountService">
-            <summary>
-            Account service instance
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.UnitOfWork">
-            <summary>
-            Current Unit Of Work 
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.UnitOfWorkController.CurrentSettings">
-            <summary>
-            Current application settings
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Controllers.Base.WritableController`5">
-            <inheritdoc />
-            <summary>
-            Entity with Unit of Work (CRUD)
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TQueryParams"></typeparam>
-            <typeparam name="TUpdateViewModel"></typeparam>
-            <typeparam name="TCreateViewModel"></typeparam>
-            <typeparam name="TViewModel"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{`0,`1,`2},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.EntityManager">
-            <summary>
-            EntityManager instance
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.GetCreateViewModel">
-            <summary>
-            Returns predefined ViewModel for entity create operation.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.PostAsync(`1)">
-            <summary>
-            Creates entity. For viewModel generation you can use {get-create-viewmodel} method to
-            get viewModel with predefined properties
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.GetUpdateViewModel(System.Guid)">
-            <summary>
-            Returns predefined ViewModel for entity create operation.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.PutAsync(System.Guid,`2)">
-            <summary>
-            Updates entity. For viewModel generation you can use {get-create-viewmodel} method to get viewModel with predefined properties
-            </summary>
-            <param name="id"></param>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.DeleteAsync(System.Guid)">
-            <summary>
-            Deletes entity from repository by identifier and return it as response
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.UpdateAuditAsync(`0,Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
-            <summary>
-            Fills the audit properties
-            </summary>
-            <param name="entity"></param>
-            <param name="accountService"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.FindEntity(System.Guid,`2)">
-            <summary>
-            Returns entity from database by default without any includes
-            </summary>
-            <param name="id"></param>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.Base.WritableController`5.ValidateRolesAndRights(`0)">
-            <summary>
-            Validates user access permissions
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.CategoriesController">
             <summary>
             Categories controller
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+        <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.LogsController">
@@ -521,7 +177,7 @@
             Logs controller
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.LogsController.#ctor(AutoMapper.IMapper,Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+        <member name="M:Calabonga.Catalog.Web.Controllers.LogsController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.ProductsController">
@@ -529,7 +185,7 @@
             Controller for entity Product with CRUD operations
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.#ctor(Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.GetIncludes">
@@ -540,7 +196,7 @@
             Demo purposes only
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.#ctor(Microsoft.Extensions.Options.IOptions{Calabonga.Catalog.Web.Infrastructure.Settings.CurrentAppSettings},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
+        <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Controllers.ValuesController.Get">
@@ -633,7 +289,7 @@
             Entity Validator Extensions
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Extensions.EntityValidatorExtensions.GetResult(System.Collections.Generic.List{Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult})">
+        <member name="M:Calabonga.Catalog.Web.Extensions.EntityValidatorExtensions.GetResult(System.Collections.Generic.List{Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.ValidationResult})">
             <summary>
             Returns validator from validation results
             </summary>
@@ -832,46 +488,6 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModel">
-            <summary>
-            Just a stub for <see cref="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.ViewModelFactory`3"/>see
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3">
-            <summary>
-            ViewModel Factory
-            </summary>
-            <typeparam name="TUpdateViewModel"></typeparam>
-            <typeparam name="TCreateViewModel"></typeparam>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3.GenerateForCreate">
-            <summary>
-            Returns ViewModel for entity creation
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3.GenerateForUpdate(System.Guid)">
-            <summary>
-            Returns ViewModel for entity editing
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.ViewModelFactory`3">
-            <summary>
-            ViewModelFactory base class
-            </summary>
-            <typeparam name="TUpdateViewModel"></typeparam>
-            <typeparam name="TCreateViewModel"></typeparam>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.Base.ViewModelFactory`3.GenerateForCreate">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.Base.ViewModelFactory`3.GenerateForUpdate(System.Guid)">
-            <inheritdoc />
-        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory">
             <summary>
             // Calabonga: update summary (2019-05-26 12:36 CategoriesController)
@@ -1044,149 +660,21 @@
             <param name="validationContext"></param>
             <returns></returns>
         </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3">
-            <summary>
-            Entity manager represents a set of the tools for entity management
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TUpdateViewModel"></typeparam>
-            <typeparam name="TCreateViewModel"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{`0,`1,`2},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{`0})">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.CurrentMapper">
-            <summary>
-            <see cref="T:AutoMapper.IMapper"/> instance for current manager
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.ViewModelFactory">
-            <summary>
-            ViewModel factory can help you to instantiate view models with initial data
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.Validator">
-            <summary>
-            Entity validator for current entity type. It can contains custom set of rules for entity validations
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnCreateBeforeAnyValidations(`1,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnCreateBeforeInsert(`1,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnCreateBeforeSaveChangesAsync(`1,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnCreateAfterSaveChangesSuccessAsync(System.Collections.Generic.List{`0})">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnEditBeforeUpdate(`2,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnEditBeforeAnyValidations(`2,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnEditBeforeMappings(`2,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.EntityManager`3.OnEditAfterSaveChangesSuccessAsync(System.Collections.Generic.List{`0})">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3">
-            <summary>
-            Entity Manager
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TCreateViewModel"></typeparam>
-            <typeparam name="TUpdateViewModel"></typeparam>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.CurrentMapper">
-            <summary>
-            <see cref="T:AutoMapper.IMapper"/> instance for current manager
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.ViewModelFactory">
-            <summary>
-            ViewModel factory can help you to instantiate view models with initial data
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.Validator">
-            <summary>
-            Entity validator for current entity type. It can contains custom set of rules for entity validations
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnCreateBeforeInsert(`1,`0)">
-            <summary>
-            Fires when validation already complete and next step is saving entity on insert operations
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnCreateBeforeSaveChangesAsync(`1,`0)">
-            <summary>
-            Fires when entity ready to Insert but some operations still need to do before saveChanges executed
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnCreateAfterSaveChangesSuccessAsync(System.Collections.Generic.List{`0})">
-            <summary>
-            Fires after changes successfully saved
-            </summary>
-            <param name="entities"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnCreateBeforeAnyValidations(`1,`0)">
-            <summary>
-            Fires before entity validation executed on entity creation
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnEditAfterSaveChangesSuccessAsync(System.Collections.Generic.List{`0})">
-            <summary>
-            Fires after changes successfully saved
-            </summary>
-            <param name="entities"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnEditBeforeUpdate(`2,`0)">
-            <summary>
-            Fires when validation already complete and next step is saving entity on update operations
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnEditBeforeAnyValidations(`2,`0)">
-            <summary>
-            Fires before entity validation executed on entity updating
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.Base.IEntityManager`3.OnEditBeforeMappings(`2,`0)">
-            <summary>
-            Fires before any mapping operations begin
-            </summary>
-            <param name="model"></param>
-            <param name="entity"></param>
-        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager">
             <summary>
             // Calabonga: update summary (2019-06-01 02:05 CategoriesController)
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Category})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager">
             <summary>
             Product entity manager
-            <see cref="T:Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory`3"/> implementation
+            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.Catalog.Web.Infrastructure.Factories.Base.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator{Calabonga.Catalog.Models.Product})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ApplicationUserMapperConfiguration">
@@ -1254,33 +742,13 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ProductMapperConfiguration.#ctor">
             <inheritdoc />
         </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.PagedListQueryParams">
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams">
             <summary>
-            Default paged list query params for pagination
+            // Calabonga: update summary (2019-06-23 01:51 DefaultPagedListQueryParams)
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.QueryParams.PagedListQueryParams.#ctor">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams.#ctor">
             <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.QueryParams.PagedListQueryParams.SortDirection">
-            <summary>
-            Sorting direction Ascending or Descending
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.SortDirection">
-            <summary>
-            Sort Direction
-            </summary>
-        </member>
-        <member name="F:Calabonga.Catalog.Web.Infrastructure.QueryParams.SortDirection.Ascending">
-            <summary>
-            Sort direction
-            </summary>
-        </member>
-        <member name="F:Calabonga.Catalog.Web.Infrastructure.QueryParams.SortDirection.Descending">
-            <summary>
-            Sort direction
-            </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.AccountService">
             <summary>
@@ -1720,217 +1188,6 @@
             Enables/Disable SmtpClient logger to console
             </summary>
         </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType">
-            <summary>
-            Entity Validation Level operation
-            </summary>
-        </member>
-        <member name="F:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType.None">
-            <summary>
-            Note
-            </summary>
-        </member>
-        <member name="F:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType.Insert">
-            <summary>
-            Insert operations
-            </summary>
-        </member>
-        <member name="F:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType.Update">
-            <summary>
-            Update operations
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1">
-            <summary>
-            Entity validator base
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.#ctor">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidateByOperationType(Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType,`0)">
-            <summary>
-            Common validations rules
-            </summary>
-            <param name="validationType"></param>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidateOnInsert(`0)">
-            <summary>
-            Checks entity for errors and returns. Validates entity for business logic rules on Creating operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidateOnUpdate(`0)">
-            <summary>
-            Checks entity for errors and returns. Validates entity for business logic rules on Editing operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidateOnInsertOrUpdate(`0)">
-            <summary>
-            Returns common validation results for Insert and for Update operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.AddValidationResult(Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult)">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.IsNeedToStop">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidator`1.ValidationContext">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext">
-            <summary>
-            Entity
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.#ctor">
-            <inheritdoc />
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.#ctor(System.Collections.Generic.List{Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult})">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.Errors">
-            <summary>
-            Returns error list with <see cref="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult"/>
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.AddValidationResult(Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult)">
-            <summary>
-            Adds validation result to collection of the results
-            </summary>
-            <param name="result"></param>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.IsValid">
-            <summary>
-            Returns is validation completed successfully
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.IsNeedToStop">
-            <summary>
-            Indicates that validation has a critical errors and need to be stopped
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationContext.ToString">
-            <summary>
-            Returns a string that represents the current object.
-            </summary>
-            <returns>
-            A string that represents the current object.
-            </returns>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1">
-            <summary>
-            Entity Validator interface
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.ValidateByOperationType(Calabonga.Catalog.Web.Infrastructure.Validations.Base.EntityValidationType,`0)">
-            <summary>
-            Common validations rules
-            </summary>
-            <param name="validationType"></param>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.ValidateOnInsert(`0)">
-            <summary>
-            Checks entity for errors and returns. Validates entity for business logic rules on Creating operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.ValidateOnUpdate(`0)">
-            <summary>
-            Checks entity for errors and returns. Validates entity for business logic rules on Editing operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.ValidateOnInsertOrUpdate(`0)">
-            <summary>
-            Returns common validation results for Insert and for Update operations
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.AddValidationResult(Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult)">
-            <summary>
-            Add custom validation result
-            </summary>
-            <param name="validationResult"></param>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.IsNeedToStop">
-            <summary>
-            Indicates than the validator already has a critical errors. Validation process should be stopped.
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.IEntityValidator`1.ValidationContext">
-            <summary>
-            Validator result can accumulate errors for entity
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult">
-            <summary>
-            Represent result for <see cref="M:ValidateUserRolesAndRights"/>
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult.#ctor">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult.IsOk">
-            <summary>
-            Indicated that user authorized to execute operations
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult.Errors">
-            <summary>
-            List of validation errors
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult.AddError(System.String)">
-            <summary>
-            Append error to error list
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.PermissionValidationResult.ToString">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.UnauthorizedPermissionValidationResult">
-            <summary>
-            Unauthorized access validation result
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.UnauthorizedPermissionValidationResult.#ctor(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult">
-            <summary>
-            Entity Validation Result for validation
-            </summary>
-        </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult.#ctor(System.String,System.Boolean)">
-            <inheritdoc />
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult.Message">
-            <summary>
-            Message text
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.Validations.Base.ValidationResult.IsNeedToStop">
-            <summary>
-            Indicates that we should break entity validation 
-            </summary>
-        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator">
             <summary>
             Category validator
@@ -2265,16 +1522,6 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.CategoryName">
             <summary>
             Category
-            </summary>
-        </member>
-        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ViewModelBase">
-            <summary>
-            ViewModelBase for WritableController
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ViewModelBase.Id">
-            <summary>
-            Identifier
             </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Middlewares.ErrorHandlingMiddleware">

@@ -1,5 +1,5 @@
 ﻿using System;
-using Calabonga.Catalog.Models;
+using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
 {

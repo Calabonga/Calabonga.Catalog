@@ -1,4 +1,6 @@
-﻿namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels
+﻿using Calabonga.EntityFrameworkCore.Entities.Base;
+
+namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels
 {
     /// <summary>
     /// // Calabonga: update summary (2019-05-26 01:05 CategoriesController)

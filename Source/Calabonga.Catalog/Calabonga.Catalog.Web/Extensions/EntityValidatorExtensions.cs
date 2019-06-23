@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators;
 
 namespace Calabonga.Catalog.Web.Extensions
 {

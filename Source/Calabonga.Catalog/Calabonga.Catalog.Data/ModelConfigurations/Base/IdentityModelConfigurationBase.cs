@@ -1,4 +1,4 @@
-﻿using Calabonga.Catalog.Models.Base;
+﻿using Calabonga.EntityFrameworkCore.Entities.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

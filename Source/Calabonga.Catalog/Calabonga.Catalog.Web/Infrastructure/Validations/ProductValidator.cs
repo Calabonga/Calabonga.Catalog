@@ -1,5 +1,5 @@
 ﻿using Calabonga.Catalog.Models;
-using Calabonga.Catalog.Web.Infrastructure.Validations.Base;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Validations
 {

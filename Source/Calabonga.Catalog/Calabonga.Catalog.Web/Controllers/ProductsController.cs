@@ -1,32 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
-using Calabonga.Catalog.Web.Controllers.Base;
-using Calabonga.Catalog.Web.Infrastructure.Managers.Base;
-using Calabonga.Catalog.Web.Infrastructure.QueryParams;
-using Calabonga.Catalog.Web.Infrastructure.Services;
-using Calabonga.Catalog.Web.Infrastructure.Settings;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Controllers;
+using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.Extensions.Options;
 
 namespace Calabonga.Catalog.Web.Controllers
 {
     /// <summary>
     /// Controller for entity Product with CRUD operations
     /// </summary>
-    public class ProductsController : WritableController<Product, ProductCreateViewModel, ProductUpdateViewModel, ProductViewModel, PagedListQueryParams>
+    public class ProductsController : WritableController<ApplicationDbContext, ApplicationUser, ApplicationRole, Product, ProductCreateViewModel, ProductUpdateViewModel, ProductViewModel, PagedListQueryParams>
     {
         /// <inheritdoc />
-        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager,
-            IOptions<CurrentAppSettings> options,
-            IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork,
-            IAccountService accountService)
-            : base(entityManager, options, unitOfWork, accountService)
+        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork) : base(entityManager, unitOfWork)
         {
         }
 

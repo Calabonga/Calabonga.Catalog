@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Calabonga.Catalog.Web.Infrastructure.Factories.Base;
+using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels
 {
