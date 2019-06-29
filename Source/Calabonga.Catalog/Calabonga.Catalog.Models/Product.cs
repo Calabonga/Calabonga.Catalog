@@ -38,5 +38,10 @@ namespace Calabonga.Catalog.Models
         /// The collection of the reviews for current product
         /// </summary>
         public virtual ICollection<Review> Reviews { get; set; }
+
+        /// <summary>
+        /// Lined tags
+        /// </summary>
+        public virtual ICollection<ProductTag> ProductTags { get; set; }
     }
 }
