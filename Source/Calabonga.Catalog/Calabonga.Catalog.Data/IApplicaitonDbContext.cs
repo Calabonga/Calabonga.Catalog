@@ -19,6 +19,8 @@ namespace Calabonga.Catalog.Data
 
         DbSet<Review> Reviews { get; set; }
         
+        DbSet<Tag> Tags { get; set; }
+        
         #endregion
 
         #region System

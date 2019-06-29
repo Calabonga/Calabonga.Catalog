@@ -23,6 +23,9 @@ namespace Calabonga.Catalog.Data
         /// <inheritdoc />
         public DbSet<Review> Reviews { get; set; }
 
+        /// <inheritdoc />
+        public DbSet<Tag> Tags { get; set; }
+
         #endregion
 
         #region System
