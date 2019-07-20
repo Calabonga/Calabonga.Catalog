@@ -1,4 +1,5 @@
-﻿using Calabonga.Catalog.Data;
+﻿using System;
+using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.QueryParams;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels;

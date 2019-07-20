@@ -664,7 +664,10 @@
             // Calabonga: update summary (2019-06-01 02:05 CategoriesController)
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel,Calabonga.Catalog.Models.Category)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager">
@@ -1212,7 +1215,7 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.ValidateOnInsertOrUpdate(Calabonga.Catalog.Models.Category)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Validations.CategoryValidator.ValidateOnInsert(Calabonga.Catalog.Models.Category)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Validations.LogValidator">
@@ -1384,6 +1387,17 @@
             Description for current catalog
             </summary>
         </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel.Visible">
+            <inheritdoc />
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel.VisibleProducts">
+            <summary>
+            Products need should be enabled
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryViewModel">
             <summary>
             // Calabonga: update summary (2019-05-26 01:05 CategoriesController)
@@ -1524,6 +1538,9 @@
             Price
             </summary>
         </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Visible">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel">
             <summary>
             ViewModel for Product UI viewing
@@ -1606,6 +1623,9 @@
             <summary>
             Product identifier
             </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.Visible">
+            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel">
             <summary>

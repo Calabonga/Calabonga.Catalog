@@ -75,19 +75,10 @@ namespace Calabonga.Catalog.Web.Infrastructure.Services
             {
                 var userManager = _unitOfWork.GetUserManager();
                 var result = await userManager.CreateAsync(user, model.Password);
-                var role = AppData.CompanyRoleName;
-
+               
                 if (result.Succeeded)
                 {
-                    var roleManager = _unitOfWork.GetRoleManager();
-                    if (await roleManager.FindByNameAsync(role) == null)
-                    {
-                        operation.Error = new MicroserviceUserNotFoundException();
-                        operation.AddError(AppData.Exceptions.UserNotFoundException);
-                        return await Task.FromResult(operation);
-                    }
-                    await userManager.AddToRoleAsync(user, role);
-                    await AddClaimsToUser(userManager, user, role);
+             
                     var profile = _mapper.Map<ApplicationUserProfile>(model);
                     var profileRepository = _unitOfWork.GetRepository<ApplicationUserProfile>();
                     profile.ApplicationUserId = user.Id;

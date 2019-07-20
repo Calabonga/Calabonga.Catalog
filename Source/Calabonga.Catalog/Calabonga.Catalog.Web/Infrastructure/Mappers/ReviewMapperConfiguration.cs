@@ -18,6 +18,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers
 
             CreateMap<ReviewCreateViewModel, Review>()
                 .ForMember(x => x.Id, o=>o.Ignore())
+                .ForMember(x => x.Visible, o=>o.MapFrom(_=> false))
                 .ForMember(x => x.Product, o=>o.Ignore())
                 .IgnoreAudit();
 

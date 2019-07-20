@@ -13,11 +13,6 @@ namespace Calabonga.Catalog.Core
         public const string SystemAdministratorRoleName = "Administrator";
 
         /// <summary>
-        /// "BusinessOwner"
-        /// </summary>
-        public const string CompanyRoleName = "Customer";
-
-        /// <summary>
         /// Roles
         /// </summary>
         public static IEnumerable<string> Roles
@@ -25,7 +20,6 @@ namespace Calabonga.Catalog.Core
             get
             {
                 yield return SystemAdministratorRoleName;
-                yield return CompanyRoleName;
             }
         }
 

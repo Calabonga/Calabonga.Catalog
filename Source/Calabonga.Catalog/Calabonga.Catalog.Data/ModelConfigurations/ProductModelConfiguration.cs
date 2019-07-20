@@ -15,6 +15,7 @@ namespace Calabonga.Catalog.Data.ModelConfigurations
             builder.Property(x => x.Name).HasMaxLength(128).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(2048);
             builder.Property(x => x.Price);
+            builder.Property(x => x.Visible);
             builder.Property(x => x.CategoryId).IsRequired();
 
             builder.HasOne(x => x.Category);

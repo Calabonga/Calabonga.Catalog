@@ -7,7 +7,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels
     /// <summary>
     /// ViewModel for Review updating
     /// </summary>
-    public class ReviewUpdateViewModel : ViewModelBase
+    public class ReviewUpdateViewModel : ViewModelBase, IPublished
     {
         /// <summary>
         /// Message from user
@@ -28,5 +28,8 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels
         /// Product identifier
         /// </summary>
         public Guid ProductId { get; set; }
+
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

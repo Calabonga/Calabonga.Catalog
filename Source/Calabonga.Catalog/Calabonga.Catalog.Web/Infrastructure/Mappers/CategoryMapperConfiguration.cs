@@ -15,14 +15,16 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers
         {
             CreateMap<Category, CategoryViewModel>();
 
-            CreateMap<Category, CategoryUpdateViewModel>();
+            CreateMap<Category, CategoryUpdateViewModel>()
+                .ForMember(x=>x.VisibleProducts, o=>o.Ignore());
 
             CreateMap<CategoryUpdateViewModel, Category>()
                 .ForMember(x => x.Products, o => o.Ignore());
-            
+
             CreateMap<CategoryCreateViewModel, Category>()
-                .ForMember(x=>x.Id, o=>o.Ignore())
-                .ForMember(x=>x.Products, o=>o.Ignore());
+                .ForMember(x => x.Visible, o => o.MapFrom(_ => false))
+                .ForMember(x => x.Id, o => o.Ignore())
+                .ForMember(x => x.Products, o => o.Ignore());
 
             CreateMap<IPagedList<Category>, IPagedList<CategoryViewModel>>()
                 .ConvertUsing<PagedListConverter<Category, CategoryViewModel>>();

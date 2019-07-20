@@ -7,7 +7,7 @@ namespace Calabonga.Catalog.Models
     /// <summary>
     /// Product
     /// </summary>
-    public class Product : Auditable
+    public class Product : Auditable, IPublished
     {
         /// <summary>
         /// Name
@@ -43,5 +43,8 @@ namespace Calabonga.Catalog.Models
         /// Lined tags
         /// </summary>
         public virtual ICollection<ProductTag> ProductTags { get; set; }
+
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

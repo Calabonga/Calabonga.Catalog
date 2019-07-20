@@ -17,12 +17,15 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers
             CreateMap<Product, ProductViewModel>();
 
             CreateMap<ProductCreateViewModel, Product>()
+                .ForMember(x => x.Visible, o => o.MapFrom(_=> false))
                 .ForMember(x => x.Id, o => o.Ignore())
+                .ForMember(x => x.ProductTags, o => o.Ignore())
                 .ForMember(x => x.Reviews, o => o.Ignore())
                 .ForMember(x => x.Category, o => o.Ignore())
                 .IgnoreAudit();
 
             CreateMap<ProductUpdateViewModel, Product>()
+                .ForMember(x => x.ProductTags, o => o.Ignore())
                 .ForMember(x => x.Reviews, o => o.Ignore())
                 .ForMember(x => x.Category, o => o.Ignore())
                 .IgnoreAudit();

@@ -6,7 +6,7 @@ namespace Calabonga.Catalog.Models
     /// <summary>
     /// Category for products
     /// </summary>
-    public class Category: Identity
+    public class Category: Identity, IPublished
     {
         /// <summary>
         /// Name of the catalog
@@ -23,5 +23,7 @@ namespace Calabonga.Catalog.Models
         /// </summary>
         public virtual ICollection<Product> Products { get; set; }
 
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

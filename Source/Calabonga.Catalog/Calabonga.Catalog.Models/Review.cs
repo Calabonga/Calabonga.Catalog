@@ -6,7 +6,7 @@ namespace Calabonga.Catalog.Models
     /// <summary>
     /// // Calabonga: update summary (2019-06-23 03:29 Review)
     /// </summary>
-    public class Review : Auditable
+    public class Review : Auditable, IPublished
     {
         /// <summary>
         /// Message from user
@@ -32,5 +32,8 @@ namespace Calabonga.Catalog.Models
         /// Product
         /// </summary>
         public virtual Product Product { get; set; }
+
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Calabonga.Catalog.Models;
 using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
@@ -6,7 +7,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
     /// <summary>
     /// ViewModel for Product updating
     /// </summary>
-    public class ProductUpdateViewModel : ViewModelBase
+    public class ProductUpdateViewModel : ViewModelBase, IPublished
     {
         /// <summary>
         /// Name
@@ -27,5 +28,8 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
         /// Price
         /// </summary>
         public int? Price { get; set; }
+
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

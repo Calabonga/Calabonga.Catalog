@@ -20,7 +20,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Validations
         }
 
         /// <inheritdoc />
-        public override IEnumerable<ValidationResult> ValidateOnInsertOrUpdate(Category entity)
+        public override IEnumerable<ValidationResult> ValidateOnInsert(Category entity)
         {
             var category = _unitOfWork.GetRepository<Category>().GetFirstOrDefault(predicate: x => x.Name.ToLower().Equals(entity.Name.ToLower()));
             if (category != null)
