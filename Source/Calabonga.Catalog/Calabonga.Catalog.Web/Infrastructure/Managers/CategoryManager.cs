@@ -50,7 +50,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
                 }
             }
 
-            if (!entity.Visible && model.Visible && model.VisibleProducts)
+            if (model.Visible && model.VisibleProducts)
             {
                 var products = _unitOfWork.GetRepository<Product>()
                     .GetAll()

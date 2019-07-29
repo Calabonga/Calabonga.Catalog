@@ -1,4 +1,5 @@
 ﻿using System;
+using Calabonga.Catalog.Models;
 using Calabonga.EntityFrameworkCore.Entities.Base;
 
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
@@ -6,7 +7,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
     /// <summary>
     /// ViewModel for Product UI viewing
     /// </summary>
-    public class ProductViewModel : ViewModelBase
+    public class ProductViewModel : ViewModelBase, IPublished
     {
         /// <summary>
         /// Name
@@ -32,5 +33,8 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
         /// Category
         /// </summary>
         public string CategoryName { get; set; }
+
+        /// <inheritdoc />
+        public bool Visible { get; set; }
     }
 }

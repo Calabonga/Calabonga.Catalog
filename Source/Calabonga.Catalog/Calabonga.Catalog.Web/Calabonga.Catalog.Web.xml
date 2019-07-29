@@ -676,7 +676,10 @@
             <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel,Calabonga.Catalog.Models.Product)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager">
@@ -1513,6 +1516,9 @@
             Price
             </summary>
         </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel">
             <summary>
             ViewModel for Product updating
@@ -1539,6 +1545,9 @@
             </summary>
         </member>
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Visible">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel">
@@ -1570,6 +1579,9 @@
             <summary>
             Category
             </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.Visible">
+            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel">
             <summary>
