@@ -37,7 +37,15 @@
             /// </summary>
             public static string AccessDenied => "Access Denied";
 
-           
+            /// <summary>
+            /// "UserName should have at least 5 characters";
+            /// </summary>
+            public static string UserNameMinLength => "UserName should have at least 5 characters";
+
+            /// <summary>
+            ///  "Product identifier is required";
+            /// </summary>
+            public static string ProductIdentifierRequired => "Product identifier is required";
         }
     }
 }

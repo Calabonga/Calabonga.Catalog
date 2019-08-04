@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
+using Calabonga.Catalog.Web.Infrastructure.Providers;
+using Calabonga.Catalog.Web.Infrastructure.Services;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
@@ -15,16 +17,19 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
     /// </summary>
     public class ProductManager : EntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel>
     {
+        private readonly IProductProvider _productProvider;
         private readonly IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> _unitOfWork;
 
         /// <inheritdoc />
         public ProductManager(
+            IProductProvider productProvider,
             IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork,
             IMapper mapper,
             IViewModelFactory<Product, ProductCreateViewModel, ProductUpdateViewModel> viewModelFactory,
             IEntityValidator<Product> validator)
             : base(mapper, viewModelFactory, validator)
         {
+            _productProvider = productProvider;
             _unitOfWork = unitOfWork;
         }
 
@@ -45,6 +50,24 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
                     {
                         Validator.AddValidationResult(new ValidationResult("Нельзя включить товар, если его категория выключена", true));
                     }
+                }
+            }
+
+            if (entity.Visible && !model.Visible)
+            {
+                var operation = _productProvider.ChangeReviewVisibilityByProductId(entity, false);
+                if (!operation.Ok)
+                {
+                    Validator.AddValidationResult(new ValidationResult("Что-то пошло не так."));
+                }
+            }
+
+            if (!entity.Visible && model.Visible)
+            {
+                var operation = _productProvider.ChangeReviewVisibilityByProductId(entity, true);
+                if (!operation.Ok)
+                {
+                    Validator.AddValidationResult(new ValidationResult("Что-то пошло не так."));
                 }
             }
         }

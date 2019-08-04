@@ -199,6 +199,9 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.GetPaged(Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams,System.Boolean)">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Extensions.AssemblyExtensions">
             <summary>
             Assembly helpers
@@ -664,7 +667,7 @@
             // Calabonga: update summary (2019-06-01 02:05 CategoriesController)
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel,Calabonga.Catalog.Models.Category)">
@@ -676,7 +679,7 @@
             <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel,Calabonga.Catalog.Models.Product)">
@@ -762,6 +765,42 @@
             </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ReviewMapperConfiguration.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider">
+            <summary>
+            Provider for product
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider.ChangeVisibilityByCategoryId(System.Guid,System.Boolean)">
+            <summary>
+            Changes visibility for products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider.ChangeReviewVisibilityByProductId(Calabonga.Catalog.Models.Product,System.Boolean)">
+            <summary>
+            Changes visibility for one product
+            </summary>
+            <param name="product"></param>
+            <param name="visibility"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Providers.ProductProvider">
+            <summary>
+            Provider for product
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Providers.ProductProvider.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.IReviewService,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Providers.ProductProvider.ChangeVisibilityByCategoryId(System.Guid,System.Boolean)">
+            <summary>
+            Change visibility for products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Providers.ProductProvider.ChangeReviewVisibilityByProductId(Calabonga.Catalog.Models.Product,System.Boolean)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams">
@@ -1104,6 +1143,17 @@
             </summary>
             <param name="message"></param>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.IReviewService">
+            <summary>
+            Service for Review
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.IReviewService.ChangeVisibilityByProductId">
+            <summary>
+            Update visibility for reviews
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.LogService">
             <summary>
             Business logic logger can save messages to database
@@ -1119,6 +1169,20 @@
             <summary>
             Allows to save data logs to the database Logs table
             </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.ReviewService">
+            <summary>
+            Service for Review
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.ReviewService.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.ReviewService.ChangeVisibilityByProductId">
+            <summary>
+            Update visibility for reviews
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Settings.Base.ServiceBase">
             <summary>

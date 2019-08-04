@@ -35,9 +35,19 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels
         /// <inheritdoc />
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            if (ProductId == Guid.Empty)
+            {
+                yield return new ValidationResult($"{ProductId}: {AppData.Messages.ProductIdentifierRequired}");
+            }
+
             if (string.IsNullOrEmpty(UserName))
             {
                 yield return new ValidationResult($"{ProductId} {AppData.Messages.UserNameRequired}");
+            }
+
+            if (!string.IsNullOrEmpty(UserName) && UserName.Length <= 5)
+            {
+                yield return new ValidationResult($"{ProductId} {AppData.Messages.UserNameMinLength}");
             }
 
             if (string.IsNullOrEmpty(Content))

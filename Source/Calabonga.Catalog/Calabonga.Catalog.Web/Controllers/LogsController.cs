@@ -4,7 +4,6 @@ using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.QueryParams;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.LogViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
-using Calabonga.EntityFrameworkCore.UnitOfWork.Framework;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Controllers;
 
 namespace Calabonga.Catalog.Web.Controllers
