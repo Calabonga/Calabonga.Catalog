@@ -679,7 +679,10 @@
             <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.ITagService,Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.OnCreateBeforeSaveChangesAsync(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Models.Product)">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel,Calabonga.Catalog.Models.Product)">
@@ -757,6 +760,25 @@
             </summary>
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.ProductMapperConfiguration.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.StringToTagResolver">
+            <summary>
+            Resolver for Tags
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.StringToTagResolver.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.ITagService)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.StringToTagResolver.Resolve(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ITagsHolder,Calabonga.Catalog.Models.Product,System.Collections.Generic.ICollection{Calabonga.Catalog.Models.ProductTag},AutoMapper.ResolutionContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.TagToStringResolver">
+            <summary>
+            Resolver for Tag
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.TagToStringResolver.Resolve(Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel,System.String,AutoMapper.ResolutionContext)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ReviewMapperConfiguration">
@@ -1152,6 +1174,53 @@
             <summary>
             Update visibility for reviews
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.ITagService">
+            <summary>
+            Tag service
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.ITagService.GetTagsFromString(System.Guid,System.String)">
+            <summary>
+            Returns <see cref="T:Calabonga.Catalog.Models.ProductTag"/> collection by names of the tags 
+            </summary>
+            <param name="productId"></param>
+            <param name="tagsAsString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.ITagService.GetStringFromTags(System.Guid)">
+            <summary>
+            Returns string names for tags
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.TagService">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.TagService.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.TagService.GetTagsFromString(System.Guid,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.TagService.GetStringFromTags(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.TagService.GetTagByName(System.String)">
+            <summary>
+            Returns Tag by name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.TagService.GetMap(System.Guid,System.Guid)">
+            <summary>
+            Returns Tag by name
+            </summary>
+            <param name="productId"></param>
+            <param name="tagId"></param>
             <returns></returns>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.LogService">
@@ -1555,6 +1624,16 @@
             
             </summary>
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ITagsHolder">
+            <summary>
+            ViewModel for entity with tags 
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ITagsHolder.TagsAsString">
+            <summary>
+            Tag names for Product
+            </summary>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel">
             <summary>
             ViewModel for Product creation
@@ -1579,6 +1658,9 @@
             <summary>
             Price
             </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.TagsAsString">
+            <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <inheritdoc />
@@ -1609,6 +1691,9 @@
             </summary>
         </member>
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Visible">
+            <inheritdoc />
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.TagsAsString">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">

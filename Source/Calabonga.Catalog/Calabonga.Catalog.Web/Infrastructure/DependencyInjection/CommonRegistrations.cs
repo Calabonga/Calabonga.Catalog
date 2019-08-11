@@ -23,6 +23,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.DependencyInjection
             services.AddScoped<ApplicationClaimsPrincipalFactory>();
 
             // services
+            services.AddTransient<ITagService, TagService>();
             services.AddTransient<ILogService, LogService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IAccountService, AccountService>();

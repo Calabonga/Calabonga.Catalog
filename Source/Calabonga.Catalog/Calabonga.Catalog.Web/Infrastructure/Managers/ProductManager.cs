@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
 using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.Providers;
@@ -17,20 +19,35 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
     /// </summary>
     public class ProductManager : EntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel>
     {
+        private readonly ITagService _tagService;
         private readonly IProductProvider _productProvider;
         private readonly IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> _unitOfWork;
 
         /// <inheritdoc />
         public ProductManager(
-            IProductProvider productProvider,
+            ITagService tagService,
+        IProductProvider productProvider,
             IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork,
             IMapper mapper,
             IViewModelFactory<Product, ProductCreateViewModel, ProductUpdateViewModel> viewModelFactory,
             IEntityValidator<Product> validator)
             : base(mapper, viewModelFactory, validator)
         {
+            _tagService = tagService;
             _productProvider = productProvider;
             _unitOfWork = unitOfWork;
+        }
+
+        /// <inheritdoc />
+        public override  Task OnCreateBeforeSaveChangesAsync(ProductCreateViewModel model, Product entity)
+        {
+            var tags = _tagService.GetTagsFromString(entity.Id, model.TagsAsString);
+            if (tags==null || !tags.Any())
+            {
+                Validator.AddValidationResult(new ValidationResult("At least one tag is required", true));
+            }
+            entity.ProductTags = tags.ToList();
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc />

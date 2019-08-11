@@ -9,7 +9,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
     /// <summary>
     /// ViewModel for Product updating
     /// </summary>
-    public class ProductUpdateViewModel : ViewModelBase, IPublished, IValidatableObject
+    public class ProductUpdateViewModel : ViewModelBase, ITagsHolder, IPublished, IValidatableObject
     {
         /// <summary>
         /// Name
@@ -33,6 +33,9 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
 
         /// <inheritdoc />
         public bool Visible { get; set; }
+
+        /// <inheritdoc />
+        public string TagsAsString { get; set; }
 
         /// <inheritdoc />
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

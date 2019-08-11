@@ -6,9 +6,20 @@ using Calabonga.EntityFrameworkCore.Entities.Base;
 namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
 {
     /// <summary>
+    /// ViewModel for entity with tags 
+    /// </summary>
+    public interface  ITagsHolder
+    {
+        /// <summary>
+        /// Tag names for Product
+        /// </summary>
+        string TagsAsString { get; set; }
+    }
+
+    /// <summary>
     /// ViewModel for Product creation
     /// </summary>
-    public class ProductCreateViewModel : IViewModel, IValidatableObject
+    public class ProductCreateViewModel : ITagsHolder, IViewModel, IValidatableObject
     {
         /// <summary>
         /// Name
@@ -29,6 +40,9 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
         /// Price
         /// </summary>
         public int? Price { get; set; }
+
+        /// <inheritdoc />
+        public string TagsAsString { get; set; }
 
         /// <inheritdoc />
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
