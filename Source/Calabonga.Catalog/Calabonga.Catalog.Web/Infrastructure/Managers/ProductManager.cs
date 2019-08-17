@@ -39,14 +39,15 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
         }
 
         /// <inheritdoc />
-        public override  Task OnCreateBeforeSaveChangesAsync(ProductCreateViewModel model, Product entity)
+        public override Task OnCreateBeforeSaveChangesAsync(ProductCreateViewModel model, Product entity)
         {
             var tags = _tagService.GetTagsFromString(entity.Id, model.TagsAsString);
-            if (tags==null || !tags.Any())
+            var productTags = tags as ProductTag[] ?? tags.ToArray();
+            if (!productTags.Any())
             {
                 Validator.AddValidationResult(new ValidationResult("At least one tag is required", true));
             }
-            entity.ProductTags = tags.ToList();
+            entity.ProductTags = productTags.ToList();
             return Task.CompletedTask;
         }
 
