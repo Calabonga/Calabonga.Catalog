@@ -19,6 +19,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.DependencyInjection
         public static void Common(IServiceCollection services)
         {
             services.AddTransient<ApplicationUserStore>();
+            services.AddTransient<ICloudService, CloudService>();
             services.AddTransient<IApplicationDbContext, ApplicationDbContext>();
             services.AddScoped<ApplicationClaimsPrincipalFactory>();
 

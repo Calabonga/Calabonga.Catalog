@@ -7,7 +7,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
     /// <summary>
     /// ViewModel for Product UI viewing
     /// </summary>
-    public class ProductViewModel : ViewModelBase, IPublished
+    public class ProductViewModel : ViewModelBase, IPublished, ITagsHolder
     {
         /// <summary>
         /// Name
@@ -36,5 +36,8 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
 
         /// <inheritdoc />
         public bool Visible { get; set; }
+
+        /// <inheritdoc />
+        public string TagsAsString { get; set; }
     }
 }

@@ -15,7 +15,8 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers
         /// <inheritdoc />
         public ProductMapperConfiguration()
         {
-            CreateMap<Product, ProductViewModel>();
+            CreateMap<Product, ProductViewModel>()
+                .ForMember(x=>x.TagsAsString, o=>o.MapFrom<TagToStringResolver>());
 
             CreateMap<ProductCreateViewModel, Product>()
                 .ForMember(x => x.ProductTags, o => o.Ignore())

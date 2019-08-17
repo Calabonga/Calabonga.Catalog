@@ -172,6 +172,20 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.CategoriesController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Controllers.CloudController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CloudController.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.ICloudService,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.CloudController.Get">
+            <summary>
+            Returns cloud
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.LogsController">
             <summary>
             Logs controller
@@ -778,7 +792,7 @@
             Resolver for Tag
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.TagToStringResolver.Resolve(Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel,System.String,AutoMapper.ResolutionContext)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers.TagToStringResolver.Resolve(Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ITagsHolder,System.String,AutoMapper.ResolutionContext)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ReviewMapperConfiguration">
@@ -951,6 +965,23 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.CacheService.GetOrCreate``2(``0,System.Func{Microsoft.Extensions.Caching.Memory.ICacheEntry,``1})">
             <inheritdoc />
         </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.CloudService">
+            <summary>
+            Cloud Service
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.CloudService.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+            <summary>
+            // Calabonga: update summary (2019-08-17 03:02 CloudService)
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.CloudService.CreateCloud">
+            <summary>
+            // Calabonga: update summary (2019-08-17 02:56 CloudService)
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.EmailService">
             <summary>
             Email service just send the mail. Nothing else!
@@ -1096,6 +1127,17 @@
             <typeparam name="TKey"></typeparam>
             <param name="key"></param>
             <param name="findIfNotFoundFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.ICloudService">
+            <summary>
+            Cloud Service
+            </summary>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Services.ICloudService.CreateCloud">
+            <summary>
+            // Calabonga: update summary (2019-08-17 02:56 CloudService)
+            </summary>
             <returns></returns>
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Services.IdentityProfileService">
@@ -1732,6 +1774,9 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.Visible">
             <inheritdoc />
         </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.TagsAsString">
+            <inheritdoc />
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel">
             <summary>
             ViewModel for Review creation
@@ -1816,6 +1861,21 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel.Product">
             <summary>
             Product
+            </summary>
+        </member>
+        <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.TagCloud">
+            <summary>
+            ViewModel for Cloud calculation
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.TagCloud.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.TagCloud.TotalCount">
+            <summary>
+            Total items count with this tag
             </summary>
         </member>
         <member name="T:Calabonga.Catalog.Web.Middlewares.ErrorHandlingMiddleware">

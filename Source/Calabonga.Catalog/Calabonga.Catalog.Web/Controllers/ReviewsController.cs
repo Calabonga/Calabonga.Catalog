@@ -16,6 +16,7 @@ namespace Calabonga.Catalog.Web.Controllers
     /// <summary>
     /// Controller for entity Review with CRUD operations
     /// </summary>
+    [Authorize]
     public class ReviewsController : WritableController<ApplicationDbContext, ApplicationUser, ApplicationRole, Review,
         ReviewCreateViewModel, ReviewUpdateViewModel, ReviewViewModel, DefaultPagedListQueryParams>
     {

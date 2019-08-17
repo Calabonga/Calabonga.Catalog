@@ -9,7 +9,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers
     /// <summary>
     /// Resolver for Tag
     /// </summary>
-    public class TagToStringResolver : IValueResolver<Product, ProductUpdateViewModel, string>
+    public class TagToStringResolver : IValueResolver<Product, ITagsHolder, string>
     {
         private readonly ITagService _tagService;
 
@@ -19,7 +19,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers.Resolvers
         }
 
         /// <inheritdoc />
-        public string Resolve(Product source, ProductUpdateViewModel destination, string destMember, ResolutionContext context)
+        public string Resolve(Product source, ITagsHolder destination, string destMember, ResolutionContext context)
         {
             var tags = _tagService.GetStringFromTags(source.Id);
             return string.Join(";", tags);

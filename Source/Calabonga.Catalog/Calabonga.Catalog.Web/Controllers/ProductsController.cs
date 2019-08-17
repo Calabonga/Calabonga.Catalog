@@ -18,7 +18,7 @@ namespace Calabonga.Catalog.Web.Controllers
     public class ProductsController : WritableController<ApplicationDbContext, ApplicationUser, ApplicationRole, Product, ProductCreateViewModel, ProductUpdateViewModel, ProductViewModel, DefaultPagedListQueryParams>
     {
         /// <inheritdoc />
-        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork) 
+        public ProductsController(IEntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel> entityManager, IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork)
             : base(entityManager, unitOfWork)
         {
         }
@@ -26,7 +26,10 @@ namespace Calabonga.Catalog.Web.Controllers
         /// <inheritdoc />
         protected override Func<IQueryable<Product>, IIncludableQueryable<Product, object>> GetIncludes()
         {
-            return i => i.Include(x => x.Category);
+            return i => i
+                .Include(x => x.Category)
+                .Include(x => x.ProductTags)
+                .ThenInclude(x => x.Tag);
         }
     }
 }
