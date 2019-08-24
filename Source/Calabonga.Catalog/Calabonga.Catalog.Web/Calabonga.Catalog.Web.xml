@@ -205,15 +205,34 @@
         <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.GetIncludes">
             <inheritdoc />
         </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.GetPaged(Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ProductsController.DeleteAsync(System.Guid)">
+            <inheritdoc />
+            [Authorize(Roles = AppData.SystemAdministratorRoleName)]
+        </member>
         <member name="T:Calabonga.Catalog.Web.Controllers.ReviewsController">
             <summary>
             Controller for entity Review with CRUD operations
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.#ctor(Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.IAccountService,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers.IEntityManager{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.GetPaged(Calabonga.Catalog.Web.Infrastructure.QueryParams.DefaultPagedListQueryParams,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.GetReviewForProductId(System.Guid)">
+            <summary>
+            Returns reviews for product
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.ValidateUserAccessRights(Calabonga.Catalog.Models.Review)">
+            <inheritdoc />
+        </member>
+        <member name="M:Calabonga.Catalog.Web.Controllers.ReviewsController.GetUserNameForAuditInfo">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Extensions.AssemblyExtensions">
@@ -1777,6 +1796,11 @@
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.TagsAsString">
             <inheritdoc />
         </member>
+        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductViewModel.ReviewsCount">
+            <summary>
+            Total reviews for product
+            </summary>
+        </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel">
             <summary>
             ViewModel for Review creation
@@ -1815,23 +1839,10 @@
             Message from user
             </summary>
         </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.UserName">
-            <summary>
-            User name who post a review
-            </summary>
-        </member>
         <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.Rating">
             <summary>
             Rating for review (1-5)
             </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.ProductId">
-            <summary>
-            Product identifier
-            </summary>
-        </member>
-        <member name="P:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel.Visible">
-            <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewViewModel">
             <summary>

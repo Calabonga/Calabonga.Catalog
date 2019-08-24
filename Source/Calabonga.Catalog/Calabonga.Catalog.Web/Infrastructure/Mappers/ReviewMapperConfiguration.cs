@@ -17,17 +17,22 @@ namespace Calabonga.Catalog.Web.Infrastructure.Mappers
             CreateMap<Review, ReviewViewModel>();
 
             CreateMap<ReviewCreateViewModel, Review>()
-                .ForMember(x => x.Id, o=>o.Ignore())
-                .ForMember(x => x.Visible, o=>o.MapFrom(_=> false))
-                .ForMember(x => x.Product, o=>o.Ignore())
+                .ForMember(x => x.Id, o => o.Ignore())
+                .ForMember(x => x.Visible, o => o.MapFrom(_ => false))
+                .ForMember(x => x.Product, o => o.Ignore())
                 .IgnoreAudit();
 
             CreateMap<ReviewUpdateViewModel, Review>()
-                .ForMember(x => x.Product, o=>o.Ignore())
-                .IgnoreAudit();
+                .ForMember(x => x.Id, o => o.MapFrom(p => p.Id))
+                .ForMember(x => x.Content, o => o.MapFrom(p => p.Content))
+                .ForMember(x => x.Rating, o => o.MapFrom(p => p.Rating))
+                .ForAllOtherMembers(o => o.Ignore());
 
             CreateMap<Review, ReviewUpdateViewModel>()
-                .ForAllMembers(x => x.Ignore());
+                .ForMember(x => x.Id, o => o.MapFrom(p => p.Id))
+                .ForMember(x => x.Content, o => o.MapFrom(p => p.Content))
+                .ForMember(x => x.Rating, o => o.MapFrom(p => p.Rating))
+                .ForAllOtherMembers(o => o.Ignore());
 
             CreateMap<IPagedList<Review>, IPagedList<ReviewViewModel>>()
                 .ConvertUsing<PagedListConverter<Review, ReviewViewModel>>();

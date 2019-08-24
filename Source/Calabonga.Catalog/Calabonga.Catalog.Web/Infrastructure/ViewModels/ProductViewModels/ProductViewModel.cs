@@ -39,5 +39,10 @@ namespace Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels
 
         /// <inheritdoc />
         public string TagsAsString { get; set; }
+
+        /// <summary>
+        /// Total reviews for product
+        /// </summary>
+        public int ReviewsCount { get; set; }
     }
 }
