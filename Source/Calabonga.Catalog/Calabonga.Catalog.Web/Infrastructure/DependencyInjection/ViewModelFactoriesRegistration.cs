@@ -21,12 +21,12 @@ namespace Calabonga.Catalog.Web.Infrastructure.DependencyInjection
             {
                 foreach (var i in type.GetInterfaces())
                 {
-                    if (!i.IsGenericType || i.GetGenericTypeDefinition() != typeof(IViewModelFactory<,,>))
+                    if (!i.IsGenericType || i.GetGenericTypeDefinition() != typeof(IViewModelFactory<,>))
                     {
                         continue;
                     }
 
-                    var interfaceType = typeof(IViewModelFactory<,,>).MakeGenericType(i.GetGenericArguments());
+                    var interfaceType = typeof(IViewModelFactory<,>).MakeGenericType(i.GetGenericArguments());
                     services.AddTransient(interfaceType, type);
                 }
             }

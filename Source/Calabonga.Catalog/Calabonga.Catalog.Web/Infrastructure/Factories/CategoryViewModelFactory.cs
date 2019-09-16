@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Calabonga.Catalog.Core.Exceptions;
 using Calabonga.Catalog.Data;
@@ -6,6 +7,7 @@ using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
+using Calabonga.OperationResultsCore;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Factories
 {
@@ -27,24 +29,27 @@ namespace Calabonga.Catalog.Web.Infrastructure.Factories
         }
 
         /// <inheritdoc />
-        public override CategoryCreateViewModel GenerateForCreate()
+        public override async Task<OperationResult<CategoryCreateViewModel>> GenerateForCreateAsync()
         {
-            return new CategoryCreateViewModel
+            var result = new CategoryCreateViewModel
             {
                 Name = "Категория по умолчанию"
             };
+
+            return await Task.FromResult(OperationResult.CreateResult(result));
         }
 
         /// <inheritdoc />
-        public override CategoryUpdateViewModel GenerateForUpdate(Guid id)
+        public override async Task<OperationResult<CategoryUpdateViewModel>> GenerateForUpdateAsync(Guid id)
         {
-            var category = _unitOfWork.GetRepository<Category>().GetFirstOrDefault(predicate: x => x.Id == id);
+            var category = await _unitOfWork.GetRepository<Category>().GetFirstOrDefaultAsync(predicate: x => x.Id == id);
             if (category == null)
             {
                 throw new MicroserviceArgumentNullException();
             }
 
-            return _mapper.Map<CategoryUpdateViewModel>(category);
+            var mapped = _mapper.Map<CategoryUpdateViewModel>(category);
+            return  OperationResult.CreateResult(mapped);
         }
     }
 }

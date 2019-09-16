@@ -9,12 +9,12 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
 {
     /// <summary>
     /// Review entity manager
-    /// <see cref="IViewModelFactory{TEntity,TCreateViewModel,TUpdateViewModel}"/> implementation
+    /// <see cref="IViewModelFactory{TCreateViewModel,TUpdateViewModel}"/> implementation
     /// </summary>
     public class ReviewManager : EntityManager<Review, ReviewCreateViewModel, ReviewUpdateViewModel>
     {
         /// <inheritdoc />
-        public ReviewManager(IMapper mapper, IViewModelFactory<Review, ReviewCreateViewModel, ReviewUpdateViewModel> viewModelFactory,
+        public ReviewManager(IMapper mapper, IViewModelFactory<ReviewCreateViewModel, ReviewUpdateViewModel> viewModelFactory,
             IEntityValidator<Review> validator)
             : base(mapper, viewModelFactory, validator)
         {

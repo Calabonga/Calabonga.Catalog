@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Exceptions;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
+using Calabonga.OperationResultsCore;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Factories
 {
@@ -23,22 +25,24 @@ namespace Calabonga.Catalog.Web.Infrastructure.Factories
             _repository = factory.GetRepository<Product>();
         }
 
+
         /// <inheritdoc />
-        public override ProductCreateViewModel GenerateForCreate()
+        public override Task<OperationResult<ProductCreateViewModel>> GenerateForCreateAsync()
         {
-            return new ProductCreateViewModel();
+            return Task.FromResult(OperationResult.CreateResult(new ProductCreateViewModel()));
         }
 
         /// <inheritdoc />
-        public override ProductUpdateViewModel GenerateForUpdate(Guid id)
+        public override async Task<OperationResult<ProductUpdateViewModel>> GenerateForUpdateAsync(Guid id)
         {
-            var item = _repository.GetFirstOrDefault(predicate: x => x.Id == id);
+            var item = await _repository.GetFirstOrDefaultAsync(predicate: x => x.Id == id);
             if (item == null)
             {
                 throw new MicroserviceNotFoundException();
             }
 
-            return _mapper.Map<ProductUpdateViewModel>(item);
+            var result = _mapper.Map<ProductUpdateViewModel>(item);
+            return OperationResult.CreateResult(result);
         }
     }
 }

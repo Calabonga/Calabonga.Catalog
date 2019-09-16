@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using Calabonga.Catalog.Data;
 using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.Providers;
@@ -8,7 +7,6 @@ using Calabonga.EntityFrameworkCore.UnitOfWork;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Managers;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators;
-using Microsoft.EntityFrameworkCore;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Managers
 {
@@ -25,7 +23,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
             IProductProvider productProvider,
             IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork,
             IMapper mapper,
-            IViewModelFactory<Category, CategoryCreateViewModel, CategoryUpdateViewModel> viewModelFactory,
+            IViewModelFactory<CategoryCreateViewModel, CategoryUpdateViewModel> viewModelFactory,
             IEntityValidator<Category> validator)
             : base(mapper, viewModelFactory, validator)
         {

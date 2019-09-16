@@ -517,10 +517,10 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole})">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForCreate">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForCreateAsync">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForUpdate(System.Guid)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.CategoryViewModelFactory.GenerateForUpdateAsync(System.Guid)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory">
@@ -531,10 +531,10 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory)">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForCreate">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForCreateAsync">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForUpdate(System.Guid)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ProductViewModelFactory.GenerateForUpdateAsync(System.Guid)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory">
@@ -545,10 +545,10 @@
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.IRepositoryFactory,Calabonga.Catalog.Web.Infrastructure.Services.IAccountService)">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForCreate">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForCreateAsync">
             <inheritdoc />
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForUpdate(System.Guid)">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Factories.ReviewViewModelFactory.GenerateForUpdateAsync(System.Guid)">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Helpers.AsyncHelper">
@@ -700,7 +700,7 @@
             // Calabonga: update summary (2019-06-01 02:05 CategoriesController)
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Category,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Category})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.CategoryManager.OnEditBeforeMappings(Calabonga.Catalog.Web.Infrastructure.ViewModels.CategoryViewModels.CategoryUpdateViewModel,Calabonga.Catalog.Models.Category)">
@@ -709,10 +709,10 @@
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager">
             <summary>
             Product entity manager
-            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
+            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`2"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.ITagService,Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Product,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.#ctor(Calabonga.Catalog.Web.Infrastructure.Services.ITagService,Calabonga.Catalog.Web.Infrastructure.Providers.IProductProvider,Calabonga.EntityFrameworkCore.UnitOfWork.IUnitOfWork{Calabonga.Catalog.Data.ApplicationDbContext,Calabonga.Catalog.Data.ApplicationUser,Calabonga.Catalog.Data.ApplicationRole},AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Product})">
             <inheritdoc />
         </member>
         <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ProductManager.OnCreateBeforeSaveChangesAsync(Calabonga.Catalog.Web.Infrastructure.ViewModels.ProductViewModels.ProductCreateViewModel,Calabonga.Catalog.Models.Product)">
@@ -724,10 +724,10 @@
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager">
             <summary>
             Review entity manager
-            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`3"/> implementation
+            <see cref="T:Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory`2"/> implementation
             </summary>
         </member>
-        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Models.Review,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Review})">
+        <member name="M:Calabonga.Catalog.Web.Infrastructure.Managers.ReviewManager.#ctor(AutoMapper.IMapper,Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories.IViewModelFactory{Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewCreateViewModel,Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels.ReviewUpdateViewModel},Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Validators.IEntityValidator{Calabonga.Catalog.Models.Review})">
             <inheritdoc />
         </member>
         <member name="T:Calabonga.Catalog.Web.Infrastructure.Mappers.ApplicationUserMapperConfiguration">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Calabonga.Catalog.Models;
 using Calabonga.Catalog.Web.Infrastructure.Helpers;
@@ -7,6 +8,7 @@ using Calabonga.Catalog.Web.Infrastructure.ViewModels.ReviewViewModels;
 using Calabonga.EntityFrameworkCore.UnitOfWork;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Exceptions;
 using Calabonga.EntityFrameworkCore.UnitOfWork.Framework.Factories;
+using Calabonga.OperationResultsCore;
 
 namespace Calabonga.Catalog.Web.Infrastructure.Factories
 {
@@ -27,32 +29,36 @@ namespace Calabonga.Catalog.Web.Infrastructure.Factories
             _repository = factory.GetRepository<Review>();
         }
 
+
         /// <inheritdoc />
-        public override ReviewCreateViewModel GenerateForCreate()
+        public override async Task<OperationResult<ReviewCreateViewModel>> GenerateForCreateAsync()
         {
             var userName = "Аноним";
-            var user = AsyncHelper.RunSync(async () => await _accountService.GetCurrentUserAsync());
+            var user = await _accountService.GetCurrentUserAsync();
             if (user != null)
             {
                 userName = $"{user.LastName} {user.FirstName}";
             }
 
-            return new ReviewCreateViewModel
+            var result = new ReviewCreateViewModel
             {
                 UserName = userName
             };
+
+            return OperationResult.CreateResult(result);
         }
 
         /// <inheritdoc />
-        public override ReviewUpdateViewModel GenerateForUpdate(Guid id)
+        public override async Task<OperationResult<ReviewUpdateViewModel>> GenerateForUpdateAsync(Guid id)
         {
-            var item = _repository.GetFirstOrDefault(predicate: x => x.Id == id);
+            var item = await _repository.GetFirstOrDefaultAsync(predicate: x => x.Id == id);
             if (item == null)
             {
                 throw new MicroserviceNotFoundException();
             }
 
-            return _mapper.Map<ReviewUpdateViewModel>(item);
+            var result = _mapper.Map<ReviewUpdateViewModel>(item);
+            return OperationResult.CreateResult(result);
         }
     }
 }

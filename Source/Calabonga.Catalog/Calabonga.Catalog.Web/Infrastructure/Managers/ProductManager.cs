@@ -15,7 +15,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
 {
     /// <summary>
     /// Product entity manager
-    /// <see cref="IViewModelFactory{TEntity,TCreateViewModel,TUpdateViewModel}"/> implementation
+    /// <see cref="IViewModelFactory{TCreateViewModel,TUpdateViewModel}"/> implementation
     /// </summary>
     public class ProductManager : EntityManager<Product, ProductCreateViewModel, ProductUpdateViewModel>
     {
@@ -29,7 +29,7 @@ namespace Calabonga.Catalog.Web.Infrastructure.Managers
         IProductProvider productProvider,
             IUnitOfWork<ApplicationDbContext, ApplicationUser, ApplicationRole> unitOfWork,
             IMapper mapper,
-            IViewModelFactory<Product, ProductCreateViewModel, ProductUpdateViewModel> viewModelFactory,
+            IViewModelFactory<ProductCreateViewModel, ProductUpdateViewModel> viewModelFactory,
             IEntityValidator<Product> validator)
             : base(mapper, viewModelFactory, validator)
         {

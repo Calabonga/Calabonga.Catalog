@@ -13,7 +13,7 @@ namespace Calabonga.Catalog.Web.Controllers
     /// <summary>
     /// 
     /// </summary>
-    public class CloudController: UnitOfWorkController<ApplicationDbContext, ApplicationUser, ApplicationRole>
+    public class CloudController: UnitOfWorkController<ApplicationUser, ApplicationRole>
     {
         private readonly ICloudService _cloudService;
 
