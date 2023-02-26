@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.Catalog2023.Web", "Calabonga.Catalog2023\Calabonga.Catalog2023.Web\Calabonga.Catalog2023.Web.csproj", "{43E6C69E-76B9-42E7-8908-9B5F2403B885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Catalog2023.Web", "Calabonga.Catalog2023\Calabonga.Catalog2023.Web\Calabonga.Catalog2023.Web.csproj", "{43E6C69E-76B9-42E7-8908-9B5F2403B885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.Catalog2023.Domain", "Calabonga.Catalog2023\Calabonga.Catalog2023.Domain\Calabonga.Catalog2023.Domain.csproj", "{EBB5021D-71CF-468E-B521-4F7425F45962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Catalog2023.Domain", "Calabonga.Catalog2023\Calabonga.Catalog2023.Domain\Calabonga.Catalog2023.Domain.csproj", "{EBB5021D-71CF-468E-B521-4F7425F45962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.Catalog2023.Infrastructure", "Calabonga.Catalog2023\Calabonga.Catalog2023.Infrastructure\Calabonga.Catalog2023.Infrastructure.csproj", "{68ADB565-952D-42F1-B7DA-D3542C6D92F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Catalog2023.Infrastructure", "Calabonga.Catalog2023\Calabonga.Catalog2023.Infrastructure\Calabonga.Catalog2023.Infrastructure.csproj", "{68ADB565-952D-42F1-B7DA-D3542C6D92F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{AF06D820-D94E-42BF-B345-F7D5CC8A9EB1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

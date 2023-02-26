@@ -3,7 +3,7 @@
 namespace Calabonga.Catalog2023.Domain
 {
     /// <summary>
-    /// // Calabonga: update summary (2019-06-23 03:29 Review)
+    /// Review for product from User
     /// </summary>
     public class Review : Auditable, IPublished
     {
