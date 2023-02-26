@@ -4,7 +4,8 @@
 
 ## Краткое описание
 
-Каталог создается заново. Некоторые сущности переиспользуются. Ну, и конечно же будут переиспользованы некоторые механизмы, а некоторые будут написаны заново. 
+Каталог создается заново. Некоторые сущности переиспользуются. Ну, и конечно же будут переиспользованы некоторые механизмы, а некоторые будут написаны заново.
+
 ## Из чего состоит проект
 
 В реализации будут использоваться следующие технологии, сборки, фреймворки, подходы, паттерны (т.д. и т.п.). Другими словами, ключевые понятия, которые можно встретить в проекте:
@@ -34,21 +35,21 @@
 
 Незарегистрированные пользователи работают с системой в режиме "readonly".
 
-## Сущность "Catalog"
+## Сущность "Category"
 1. `Name` должно быть не менее 5 и не более 50 символов.
 2. `Description` должно быть не более 1024 символов, но может быть пустым.
-3. `Catalog` можно создать без товаров.
-4. `Catalog` можно выключить/выключить (скрыть/показать для всеобщего просмотра).
+3. `Category` можно создать без товаров.
+4. `Category` можно выключить/выключить (скрыть/показать для всеобщего просмотра).
 5. При выключении каталога все товары в каталоге тоже должны выключиться.
 6. При включении каталога необходимо явно указать, включать или не включать товары.
 7. Просмотр всех каталогов должно использоваться разбиение на страницы (paging)
 8. При создании нового каталога, он должен быть невидимый по умолчанию.
-9. API должна содержать методы CRUD для управления сущностью `Catalog`:
+9. API должна содержать методы CRUD для управления сущностью `Category`:
 	* `GetPaged(int pageIndex, int pageSize)`
 	* `GetAll()`
-	* `Create(CatalogViewModel model)`
+	* `Create(CategoryViewModel model)`
 	* `GetById(Guid id)`
-	* `Update(CatalogUpdateViewModel)`
+	* `Update(CategoryUpdateViewModel)`
 	* `Delete(Guid id)`
 ---
 ## Сущность "Product"
@@ -122,6 +123,118 @@
 2. Пользователь может удалить свой и только свой отзыв
 3. Пользователь может изменить рейтинг своего отзыва и текст содержания
 
+## Диаграмма классов
+
+``` mermaid
+classDiagram
+	direction RL
+	Product "*" <-- "1" Category
+	Tag "1..8" <-- "1" Product
+	Review "*" <-- "1" Product
+	Auditable <|-- Identity
+	Category <|-- Identity
+	EventItem <|-- Identity
+	Tag <|-- Identity
+	Product <|-- Auditable
+	Review <|-- Auditable
+
+```
+
+``` mermaid
+---
+title: Сущность Category
+---
+classDiagram
+class Category {
+	+string Name
+	+string Description
+	+List~Product~
+	bool Visible
+}
+```
+
+``` mermaid
+---
+title: Сущность Product
+---
+classDiagram
+class Product {
+	+string Name
+	+string Description
+	Guid CategoryId
+	+int Price
+	+List~Review~
+	+List~Tag~
+	bool Visible
+}
+```
+
+``` mermaid
+---
+title: Сущность EventItem
+---
+classDiagram
+class EventItem {
+	DateTime CreatedAt
+	string Logger
+	string Level
+	string Message
+	string? ThreadId
+	string? ExceptionMessage
+}
+```
+
+``` mermaid
+---
+title: Сущность Tag
+---
+classDiagram
+class Tag {
+	string Name
+	List<Product>? Products
+}
+```
+
+``` mermaid
+---
+title: Сущность Review
+---
+classDiagram
+class Review {
+	string Content
+	string User
+	int Rating
+	Guid Product
+	virtual Product
+	bool Visible
+}
+```
+
+``` mermaid
+---
+title: Сущность Identity
+---
+classDiagram
+class Identity{
+	<<Abstract>>
+	+Guid Id
+}
+```
+
+``` mermaid
+---
+title: Сущность Auditable
+---
+classDiagram
+class Auditable{
+	<<Abstract>>
+	DateTime CreatedAt
+	string CreatedBy
+	DateTime? UpdatedAt
+	string? UpdatedBy
+}
+```
+
 # Каталог товаров и услуг 2019
 
 Платформа: ASP.NET Core 2.2
@@ -129,7 +242,7 @@
 ## Краткое описание
 
 Проект создается самого начала. Используется шаблон, который описан в видео. В процессе разработки показывается как программировать, как создавать правильный функциональный код. Как использовать паттерны. Описываются принципы и правила.
-[Исходные файлы версии 2019](https://github.com/Calabonga/Calabonga.Catalog/releases/tag/v2019)
+[Исходные файлы версии 2019](https://github.com/Calabonga/Calabonga.Category/releases/tag/v2019)
 
 ## Видео 2019
 [Видео ролики 2019 года](https://www.youtube.com/playlist?list=PLIB8be7sunXOiIeeUa6yItyHpLtKG9gqQ)
