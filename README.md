@@ -129,7 +129,7 @@
 classDiagram
 	direction RL
 	Product "*" <-- "1" Category
-	Tag "1..8" <-- "1" Product
+	Tag "1..8" <-- "*" Product
 	Review "*" <-- "1" Product
 	Auditable <|-- Identity
 	Category <|-- Identity
