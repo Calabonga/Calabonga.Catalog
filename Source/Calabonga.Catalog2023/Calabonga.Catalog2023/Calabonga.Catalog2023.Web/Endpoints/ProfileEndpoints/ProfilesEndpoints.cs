@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calabonga.Catalog2023.Web.Endpoints.ProfileEndpoints
 {
-    public class ProfilesDefinition : AppDefinition
+    public class ProfilesEndpoints : AppDefinition
     {
         public override void ConfigureApplication(WebApplication app)
         {
