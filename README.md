@@ -245,7 +245,7 @@ class Auditable{
 [Исходные файлы версии 2019](https://github.com/Calabonga/Calabonga.Category/releases/tag/v2019)
 
 ## Видео 2019
-[Видео ролики 2019 года](https://www.youtube.com/playlist?list=PLIB8be7sunXOiIeeUa6yItyHpLtKG9gqQ)
+Создание приложение подробно запечатлено на видео. [Каталог товаро 2019](https://www.youtube.com/playlist?list=PLIB8be7sunXOiIeeUa6yItyHpLtKG9gqQ)
 
 ## Статья в блоге 2019
 Описание проекта, а также возможность связаться с автором есть в блоге. Статья описывающая данный репозиторий доступна в [блоге](https://www.calabonga.net/blog/post/sozdaem-katalog-tovarov-na-asp-net-core).
