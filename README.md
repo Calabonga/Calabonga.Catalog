@@ -46,7 +46,7 @@
 8. При создании нового каталога, он должен быть невидимый по умолчанию.
 9. API должна содержать методы CRUD для управления сущностью `Category`:
 	* `GetPaged(int pageIndex, int pageSize)`
-	* `GetAll()`
+	* ~`GetAll()`~
 	* `Create(CategoryViewModel model)`
 	* `GetById(Guid id)`
 	* `Update(CategoryUpdateViewModel)`
@@ -64,7 +64,7 @@
 9. API должна содержать методы CRUD для управления сущностью `Product`:
 	* `GetPaged(int pageIndex, int pageSize)`
 	* `GetAll()`
-	* `Create(ProductViewModel model)`
+	* `Create(ProductViewModel model)
 	* `GetById(Guid id)`
 	* `Update(ProductUpdateViewModel)`
 	* `Delete(Guid id)`
