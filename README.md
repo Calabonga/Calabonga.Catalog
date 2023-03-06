@@ -45,12 +45,12 @@
 7. Просмотр всех каталогов должно использоваться разбиение на страницы (paging)
 8. При создании нового каталога, он должен быть невидимый по умолчанию.
 9. API должна содержать методы CRUD для управления сущностью `Category`:
-	* `GetPaged(int pageIndex, int pageSize)`
-	* ~`GetAll()`~
-	* `Create(CategoryViewModel model)`
-	* `GetById(Guid id)`
-	* `Update(CategoryUpdateViewModel)`
-	* `Delete(Guid id)`
+	* [ ] `GetPaged(int pageIndex, int pageSize)`
+	* [x] `GetAll()`
+	* [ ] `Create(CategoryViewModel model)`
+	* [ ] `GetById(Guid id)`
+	* [ ] `Update(CategoryUpdateViewModel)`
+	* [ ] `Delete(Guid id)`
 ---
 ## Сущность "Product"
 1. `Name` должно быть не менее 5 и не более 128 символов.
@@ -62,14 +62,14 @@
 7. Просмотр всех товаров должно использоваться разбиение на страницы (paging)
 8. При создании товар он должен быть невидимый.
 9. API должна содержать методы CRUD для управления сущностью `Product`:
-	* `GetPaged(int pageIndex, int pageSize)`
-	* `GetAll()`
-	* `Create(ProductViewModel model)
-	* `GetById(Guid id)`
-	* `Update(ProductUpdateViewModel)`
-	* `Delete(Guid id)`
-	* `GetMostReviewed(int count)`
-	* `GetMostRated(int count)`
+	* [ ] `GetPaged(int pageIndex, int pageSize)`
+	* [ ] `GetAll()`
+	* [ ] `Create(ProductViewModel model)
+	* [ ] `GetById(Guid id)`
+	* [ ] `Update(ProductUpdateViewModel)`
+	* [ ] `Delete(Guid id)`
+	* [ ] `GetMostReviewed(int count)`
+	* [ ] `GetMostRated(int count)`
 ---
 ## Сущность "Review"
 1. `UserName` должно быть не менее 5 и не более 128 символов
@@ -80,13 +80,13 @@
 6. Просмотр всех обзоров должны использоваться разбиение на страницы (paging)
 7. `Review` можно тоже выключить и включить в соответствии со статусом товара, для которого это review написано.
 8. API должна содержать методы CRUD для управления сущностью `Review`:
-	* `Create(ReviewViewModel model)`
-	* `GetById(Guid id)`
-	* `Update(ReviewUpdateViewModel)`
-	* `Delete(Guid id)`
-	* `GetLastReview(int count)`
-	* `GetPaged(int pageIndex, int pageSize)`
-	* `GetAll(Guid productId)`
+	* [ ] `Create(ReviewViewModel model)`
+	* [ ] `GetById(Guid id)`
+	* [ ] `Update(ReviewUpdateViewModel)`
+	* [ ] `Delete(Guid id)`
+	* [ ] `GetLastReview(int count)`
+	* [ ] `GetPaged(int pageIndex, int pageSize)`
+	* [ ] `GetAll(Guid productId)`
 ---
 ## Сущность "Tag" ("Метка")
 1. Один продукт должен иметь одну и более меток (до 8 шт).
@@ -95,9 +95,9 @@
 4. Данные о продукте должны включать в себя метки товара (`GetById` и `GetPaged`)
 5. Просмотр всех меток, которые используются в каталоге можно осуществить на странице "Облако меток" (см. `GetCloud()`).
 6. API должна содержать методы CRUD для управления сущностью `Tag`:
-	* `GetCloud()`
-	* `Update(TagUpdateViewModel)`
-	* `Delete(Guid id)`
+	* [ ] `GetCloud()`
+	* [ ] `Update(TagUpdateViewModel)`
+	* [ ] `Delete(Guid id)`
 ---
 
 ## Общие требования для сущности Review
