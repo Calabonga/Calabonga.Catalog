@@ -47,7 +47,7 @@
 9. API должна содержать методы CRUD для управления сущностью `Category`:
 	* [ ] `GetPaged(int pageIndex, int pageSize)`
 	* [x] `GetAll()`
-	* [ ] `Create(CategoryViewModel model)`
+	* [x] `Create(CategoryViewModel model)`
 	* [ ] `GetById(Guid id)`
 	* [ ] `Update(CategoryUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
