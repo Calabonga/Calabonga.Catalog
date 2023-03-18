@@ -14,7 +14,7 @@ public class ErrorHandlingDefinition : AppDefinition
 {
 
 #if DEBUG
-    public override bool Enabled => false;
+    public override bool Enabled => true;
 #else
         public override bool Enabled => true;
 #endif
@@ -31,15 +31,6 @@ public class ErrorHandlingDefinition : AppDefinition
             var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
             if (contextFeature is not null)
             {
-                // handling validation errors
-                if (contextFeature.Error is ValidationException failures)
-                {
-                    context.Response.StatusCode = (int)GetErrorCode(contextFeature.Error);
-
-                    await context.Response.WriteAsync(contextFeature.Error.Message);
-                    return;
-                }
-
                 // handling all another errors 
                 Log.Error($"Something went wrong in the {contextFeature.Error}");
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
