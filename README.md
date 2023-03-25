@@ -50,7 +50,7 @@
 	* [x] `GetAll()`
 	* [x] `Create(CategoryViewModel model)`
 	* [x] `GetById(Guid id)`
-	* [ ] `Update(CategoryUpdateViewModel)`
+	* [x] `Update(CategoryUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
 ---
 ## Сущность "Product"

@@ -31,6 +31,10 @@ public class ApplicationDbContext : DbContextBase
     {
         builder.UseOpenIddict<Guid>();
         base.OnModelCreating(builder);
+
+        builder.Entity<Category>().HasQueryFilter(x => x.Visible);
+        builder.Entity<Review>().HasQueryFilter(x => x.Visible);
+        builder.Entity<Product>().HasQueryFilter(x => x.Visible);
     }
 }
 

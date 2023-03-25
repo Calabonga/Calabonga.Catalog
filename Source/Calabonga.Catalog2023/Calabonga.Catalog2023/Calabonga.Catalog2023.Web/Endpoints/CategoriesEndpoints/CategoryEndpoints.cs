@@ -17,6 +17,33 @@ public class CategoryEndpoints : AppDefinition
         app.MapGet("/api/categories/get-all", GetAllCategories);
         app.MapGet("/api/categories/{id:guid}", GetByIdCategory);
         app.MapPost("/api/categories/create", CreateCategory);
+        app.MapGet("/api/categories/edit/{id:guid}", CreateGetForEdit);
+        app.MapPost("/api/categories/update", CreatePostAfterEdit);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Categories")]
+    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    private Task<OperationResult<CategoryViewModel>> CreatePostAfterEdit(
+        [FromBody] CategoryUpdateViewModel model,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new CategoryUpdateRequest(model, context.User), context.RequestAborted);
+    }
+
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Categories")]
+    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    private Task<OperationResult<CategoryUpdateViewModel>> CreateGetForEdit(
+        Guid id,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new CategoryGetByIdForEditRequest(id, context.User), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]

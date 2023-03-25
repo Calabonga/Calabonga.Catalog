@@ -2,8 +2,8 @@
 
 public class CatalogNotFoundException : Exception
 {
-    public CatalogNotFoundException(string message)
-        : base(message){}
-    public CatalogNotFoundException(string message, Exception? exception) 
-        : base(message, exception){}
+    public CatalogNotFoundException(string entityName, string id)
+        : base($"Item {entityName} with {id} not found") { }
+    public CatalogNotFoundException(string entityName, string id, Exception? exception)
+        : base($"Item {entityName} with {id} not found", exception) { }
 }

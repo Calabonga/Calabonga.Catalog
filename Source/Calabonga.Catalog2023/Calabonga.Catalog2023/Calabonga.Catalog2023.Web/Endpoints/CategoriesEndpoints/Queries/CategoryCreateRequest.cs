@@ -39,7 +39,8 @@ public class CategoryCreateRequestHandler
 
         if (!_unitOfWork.LastSaveChangesResult.IsOk)
         {
-            operation.AddError(_unitOfWork.LastSaveChangesResult.Exception ?? new CatalogDatabaseSaveException("Saving data error"));
+            operation.AddError(_unitOfWork.LastSaveChangesResult.Exception
+                               ?? new CatalogDatabaseSaveException(nameof(Category)));
             return operation;
         }
 

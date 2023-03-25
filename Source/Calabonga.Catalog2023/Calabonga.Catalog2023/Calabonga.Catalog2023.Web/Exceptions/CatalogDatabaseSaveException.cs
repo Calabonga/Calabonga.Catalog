@@ -2,9 +2,9 @@
 
 public class CatalogDatabaseSaveException : Exception
 {
-    public CatalogDatabaseSaveException(string? message)
-        : base(message) { }
+    public CatalogDatabaseSaveException(string entityName)
+        : base($"Saving data error for entity name {entityName}") { }
 
-    public CatalogDatabaseSaveException(string? message, Exception? exception)
-        : base(message, exception) { }
+    public CatalogDatabaseSaveException(string entityName, Exception? exception)
+        : base($"Saving data error for entity name {entityName}", exception) { }
 }
