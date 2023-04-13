@@ -13,7 +13,7 @@ namespace Calabonga.Catalog2023.Web.Definitions.Swagger
     public class SwaggerDefinition : AppDefinition
     {
 
-        private const string AppVersion = $"{ThisAssembly.Git.SemVer.Major}.{ThisAssembly.Git.SemVer.Minor}.{ThisAssembly.Git.SemVer.Patch}";
+        private const string AppVersion = "1.0.0";
         private const string SwaggerConfig = "/swagger/v1/swagger.json";
 
         public override void ConfigureApplication(WebApplication app)
@@ -29,7 +29,6 @@ namespace Calabonga.Catalog2023.Web.Definitions.Swagger
             app.UseSwaggerUI(settings =>
             {
                 settings.SwaggerEndpoint(SwaggerConfig, $"{AppData.ServiceName} v.{AppVersion}");
-                settings.HeadContent = $"{ThisAssembly.Git.Branch.ToUpper()} {ThisAssembly.Git.Commit.ToUpper()}";
                 settings.DocumentTitle = $"{AppData.ServiceName}";
                 settings.DefaultModelExpandDepth(0);
                 settings.DefaultModelRendering(ModelRendering.Model);

@@ -45,13 +45,13 @@
 * [x] При получение всех товаров `GetAll()` администратор должен получать и скрытые категории тоже.
 * [ ] Просмотр всех каталогов должно использоваться разбиение на страницы (paging)
 * [x] При создании нового каталога, он должен быть невидимый по умолчанию.
-* [ ] API должна содержать методы CRUD для управления сущностью `Category`:
-	* [ ] `GetPaged(int pageIndex, int pageSize)`
+* [x] API должна содержать методы CRUD для управления сущностью `Category`:
+	* [x] `GetPaged(int pageIndex, int pageSize)`
 	* [x] `GetAll()`
 	* [x] `Create(CategoryViewModel model)`
 	* [x] `GetById(Guid id)`
 	* [x] `Update(CategoryUpdateViewModel)`
-	* [ ] `Delete(Guid id)`
+	* [x] `Delete(Guid id)`
 ---
 ## Сущность "Product"
 1. `Name` должно быть не менее 5 и не более 128 символов.
