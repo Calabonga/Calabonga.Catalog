@@ -34,8 +34,12 @@ public class ApplicationDbContext : DbContextBase
 
         builder.Entity<Category>().HasQueryFilter(x => x.Visible);
         builder.Entity<Category>().Navigation(x => x.Products).AutoInclude();
+
         builder.Entity<Review>().HasQueryFilter(x => x.Visible);
+
         builder.Entity<Product>().HasQueryFilter(x => x.Visible);
+        builder.Entity<Product>().Navigation(x => x.Category).AutoInclude();
+        builder.Entity<Product>().Navigation(x => x.Tags).AutoInclude();
     }
 }
 

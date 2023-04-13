@@ -20,7 +20,7 @@ public class CategoryEndpoints : AppDefinition
         app.MapGet("/api/categories/{id:guid}", GetByIdCategory);
         app.MapPost("/api/categories/create", CreateCategory);
         app.MapGet("/api/categories/edit/{id:guid}", CategoryCreateGetForEdit);
-        app.MapPost("/api/categories/update", CategoryCreatePostAfterEdit);
+        app.MapPut("/api/categories/update", CategoryCreatePostAfterEdit);
         app.MapDelete("/api/categories/delete/{id:guid}", CategoryDeleteCategory);
     }
 

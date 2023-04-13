@@ -64,8 +64,8 @@
 8. При создании товар он должен быть невидимый.
 9. API должна содержать методы CRUD для управления сущностью `Product`:
 	* [ ] `GetPaged(int pageIndex, int pageSize)`
-	* [ ] `GetAll()`
-	* [ ] `Create(ProductViewModel model)
+	* [x] `GetAll()`
+	* [ ] `Create(ProductViewModel model)`
 	* [ ] `GetById(Guid id)`
 	* [ ] `Update(ProductUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
