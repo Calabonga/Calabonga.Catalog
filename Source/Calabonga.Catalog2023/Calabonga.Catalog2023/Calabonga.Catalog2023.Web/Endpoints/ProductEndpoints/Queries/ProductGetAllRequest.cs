@@ -7,10 +7,8 @@ using MediatR;
 using System.Security.Claims;
 
 namespace Calabonga.Catalog2023.Web.Endpoints.ProductEndpoints.Queries;
-
 public record ProductGetAllRequest(ClaimsPrincipal User)
     : IRequest<OperationResult<List<ProductViewModel>>>;
-
 public class ProductGetAllRequestHandler
     : IRequestHandler<ProductGetAllRequest, OperationResult<List<ProductViewModel>>>
 {
