@@ -1,8 +1,6 @@
-using Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.ViewModels;
-
 namespace Calabonga.Catalog2023.Web.Endpoints.ProductEndpoints.ViewModels;
 
-public class ProductCreateViewModel
+public class ProductPostViewModel
 {
     /// <summary>
     /// Name
@@ -28,9 +26,4 @@ public class ProductCreateViewModel
     /// Lined tags
     /// </summary>
     public string Tags { get; set; } = null!;
-
-    /// <summary>
-    /// Categories list for selection on the UI
-    /// </summary>
-    public List<CategoryViewModel>? Categories { get; set; }
 }

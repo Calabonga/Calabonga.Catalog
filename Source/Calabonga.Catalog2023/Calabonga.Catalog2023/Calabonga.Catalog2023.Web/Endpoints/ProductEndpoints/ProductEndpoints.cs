@@ -42,7 +42,7 @@ public class ProductEndpoints : AppDefinition
     [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     private Task<OperationResult<ProductViewModel>> PostCreateProduct(
         [FromServices] IMediator mediator,
-        [FromBody] ProductCreateViewModel createViewModel,
+        [FromBody] ProductPostViewModel createViewModel,
         HttpContext context)
     {
         return mediator.Send(new ProductPostCreateRequest(createViewModel, context.User), context.RequestAborted);
