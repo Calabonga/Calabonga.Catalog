@@ -24,11 +24,30 @@ public static class ProductExpressions
             CreatedAt = x.CreatedAt,
             CreatedBy = x.CreatedBy,
             Price = x.Price,
-            Reviews = new List<ReviewViewModel>(),
-            Tags = new List<TagViewModel>(),
             UpdatedAt = x.UpdatedAt,
             UpdatedBy = x.UpdatedBy,
-            Visible = x.Visible
+            Visible = x.Visible,
+
+            Reviews = x.Reviews == null
+                ? new List<ReviewViewModel>()
+                : x.Reviews!.Select(t => new ReviewViewModel
+                {
+                    Id = t.Id,
+                    ProductId = t.ProductId,
+                    Content = t.Content,
+                    CreatedAt = t.CreatedAt,
+                    UserName = t.UserName,
+                    Visible = t.Visible,
+                    CreatedBy = t.CreatedBy,
+                    Rating = t.Rating,
+                    UpdatedAt = t.UpdatedAt,
+                    UpdatedBy = t.UpdatedBy
+                }).ToList(),
+
+            Tags = x.Tags == null
+                ? new List<TagViewModel>()
+                : x.Tags!.Select(t => new TagViewModel { Id = t.Id, Name = t.Name }).ToList()
+
         };
 
     /// <summary>

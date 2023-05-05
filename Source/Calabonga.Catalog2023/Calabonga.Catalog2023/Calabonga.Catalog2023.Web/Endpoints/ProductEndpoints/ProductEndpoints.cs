@@ -51,7 +51,6 @@ public class ProductEndpoints : AppDefinition
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
     [FeatureGroupName("Products")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     private Task<OperationResult<IPagedList<ProductViewModel>>> GetPagedProducts(
         int pageIndex,
         [FromServices] IMediator mediator,
@@ -100,7 +99,6 @@ public class ProductEndpoints : AppDefinition
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
     [FeatureGroupName("Products")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     private Task<OperationResult<ProductViewModel>> GetByIdProduct(
         Guid id,
         [FromServices] IMediator mediator,
