@@ -1,4 +1,4 @@
-﻿using Calabonga.Catalog2023.Domain;
+using Calabonga.Catalog2023.Domain;
 using Calabonga.Catalog2023.Infrastructure;
 using Calabonga.Catalog2023.Web.Exceptions;
 using Calabonga.UnitOfWork;
