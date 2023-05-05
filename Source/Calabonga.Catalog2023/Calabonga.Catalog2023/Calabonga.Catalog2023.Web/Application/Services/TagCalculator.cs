@@ -1,5 +1,6 @@
 ﻿using Calabonga.Catalog2023.Domain;
 using Calabonga.Catalog2023.Infrastructure;
+using Calabonga.Catalog2023.Web.Exceptions;
 using Calabonga.UnitOfWork;
 
 namespace Calabonga.Catalog2023.Web.Application.Services;
@@ -27,12 +28,12 @@ public class TagCalculator : ITagCalculator
     {
         if (tags == null || !tags.Any() || tags.Length == 1)
         {
-            return new TagCalculatorResult(new ArgumentNullException(nameof(tags)));
+            return new TagCalculatorResult(new CatalogInvalidOperationException(nameof(ProcessTagsAsync), "At least one tag is required"));
         }
 
         if (entity == null)
         {
-            return new TagCalculatorResult(new ArgumentNullException(nameof(entity)));
+            return new TagCalculatorResult(new CatalogArgumentNullException(nameof(entity)));
         }
 
         var tagRepository = _unitOfWork.GetRepository<Tag>();
