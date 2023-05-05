@@ -38,7 +38,10 @@ public class TagCalculator : ITagCalculator
         var tagRepository = _unitOfWork.GetRepository<Tag>();
 
         var current = tags.ToArray();
-        var old = tagRepository.GetAll(selector: x => x.Name.ToLower(), false).ToArray();
+        var old = tagRepository.GetAll(selector: x => x.Name.ToLower(),
+                  predicate: x => x.Products!.Select(p => p.Id).Contains(entity.Id),
+                  disableTracking: false)
+            .ToArray();
 
         var mask = current.Intersect(old);
         var toDelete = old.Except(current).ToArray();
@@ -74,7 +77,7 @@ public class TagCalculator : ITagCalculator
 
         foreach (var name in toCreate)
         {
-            var tag = await tagRepository.GetFirstOrDefaultAsync(predicate: x => x.Name.ToLower() == name);
+            var tag = await tagRepository.GetFirstOrDefaultAsync(predicate: x => x.Name.ToLower() == name, disableTracking: false);
             if (tag == null)
             {
                 var t = new Tag { Name = name.Trim().ToLower() };

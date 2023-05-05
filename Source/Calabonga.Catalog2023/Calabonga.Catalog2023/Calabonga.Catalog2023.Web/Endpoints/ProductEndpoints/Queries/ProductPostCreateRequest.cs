@@ -42,7 +42,7 @@ public class ProductPostCreateRequestHandler
                     o => o.Items[nameof(ApplicationUser)] = request.User.Identity!.Name);
 
         var calculation = await _tagCalculator.ProcessTagsAsync(
-            request.Model.Tags.Split(',', ' ', ';'),
+            request.Model.Tags.Split(new[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
             entity,
             cancellationToken);
 

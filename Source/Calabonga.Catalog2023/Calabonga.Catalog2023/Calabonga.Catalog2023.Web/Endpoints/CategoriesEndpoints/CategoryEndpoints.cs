@@ -27,7 +27,6 @@ public class CategoryEndpoints : AppDefinition
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
     [FeatureGroupName("Categories")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     private Task<OperationResult<IPagedList<CategoryViewModel>>> GetPagedCategories(
         int pageIndex,
         [FromServices] IMediator mediator,
@@ -76,7 +75,6 @@ public class CategoryEndpoints : AppDefinition
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
     [FeatureGroupName("Categories")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     private Task<OperationResult<CategoryViewModel>> GetByIdCategory(
         Guid id,
         [FromServices] IMediator mediator,
