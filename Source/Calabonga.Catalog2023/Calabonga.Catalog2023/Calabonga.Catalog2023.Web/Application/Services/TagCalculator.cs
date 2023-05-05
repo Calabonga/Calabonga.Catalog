@@ -25,7 +25,7 @@ public class TagCalculator : ITagCalculator
         Product? entity,
         CancellationToken cancellationToken)
     {
-        if (tags == null)
+        if (tags == null || !tags.Any() || tags.Length == 1)
         {
             return new TagCalculatorResult(new ArgumentNullException(nameof(tags)));
         }
