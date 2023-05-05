@@ -26,9 +26,9 @@ public class TagCalculator : ITagCalculator
         Product? entity,
         CancellationToken cancellationToken)
     {
-        if (tags == null || !tags.Any() || tags.Length == 1)
+        if (tags == null || !tags.Any() || tags.Length < 2 || tags.Length > 8)
         {
-            return new TagCalculatorResult(new CatalogInvalidOperationException(nameof(ProcessTagsAsync), "At least one tag is required"));
+            return new TagCalculatorResult(new CatalogInvalidOperationException(nameof(ProcessTagsAsync), "At least one tag is required but max 8 tags allowed"));
         }
 
         if (entity == null)
