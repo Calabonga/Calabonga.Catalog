@@ -58,15 +58,15 @@
 * [ ] Просмотр всех товаров должно использоваться разбиение на страницы (paging)
 * [x] При создании товар он должен быть невидимый.
 * [ ] API должна содержать методы CRUD для управления сущностью `Product`:
-	* [ ] `GetPaged(int pageIndex, int pageSize)`
+	* [x] `GetPaged(int pageIndex, int pageSize)`
 	* [x] `GetAll()` (глупый метод)
 	* [x] `Create(ProductCreateViewModel model)` Get
 	* [x] `Create(ProductCreateViewModel model)` Post
-	* [ ] `GetById(Guid id)`
+	* [x] `GetById(Guid id)`
 	* [ ] `Update(ProductUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
-	* [ ] `GetMostReviewed(int count)`
-	* [ ] `GetMostRated(int count)`
+	* [x] `GetMostReviewed(int count = 10)`
+	* [x] `GetMostRated(int count = 10)`
 ---
 ## Сущность "Review"
 * [ ] `UserName` должно быть не менее 5 и не более 128 символов

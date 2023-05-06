@@ -3,7 +3,7 @@
 public class CatalogInvalidOperationException : InvalidOperationException
 {
     public CatalogInvalidOperationException(string operationName, string reason)
-        : base($"The {operationName} cannot be completed because {reason}") { }
+        : base($"The {operationName} cannot be executed because {reason}") { }
     public CatalogInvalidOperationException(string operationName, string reason, Exception? exception)
-        : base($"The {operationName} cannot be completed because {reason}", exception) { }
+        : base($"The {operationName} cannot be executed because {reason}", exception) { }
 }

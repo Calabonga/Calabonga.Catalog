@@ -20,9 +20,33 @@ public class ProductEndpoints : AppDefinition
         app.MapPost("/api/products/create", PostCreateProduct);
         app.MapGet("/api/products/get-paged/{pageIndex:int}", GetPagedProducts);
         app.MapGet("/api/products/{id:guid}", GetByIdProduct);
+        app.MapGet("/api/products/most-reviewed/{total:int}", GetMostReviewedProducts);
+        app.MapGet("/api/products/most-rated/{total:int}", GetMostRatedProducts);
         app.MapGet("/api/products/edit/{id:guid}", ProductCreateGetForEdit);
         app.MapPut("/api/products/update", ProductCreatePostAfterEdit);
         app.MapDelete("/api/products/delete/{id:guid}", ProductDeleteProduct);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Products")]
+    private Task<OperationResult<List<ProductMostReviewedViewModel>>> GetMostReviewedProducts(
+        [FromServices] IMediator mediator,
+        HttpContext context,
+        int total = 10)
+    {
+        return mediator.Send(new ProductGetMostReviewedRequest(context.User, total), context.RequestAborted);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Products")]
+    private Task<OperationResult<List<ProductMostRatedViewModel>>> GetMostRatedProducts(
+        [FromServices] IMediator mediator,
+        HttpContext context,
+        int total = 10)
+    {
+        return mediator.Send(new ProductGetMostRatedRequest(context.User, total), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]
