@@ -61,7 +61,7 @@ public static class ProductExpressions
             Description = x.Description,
             CategoryId = x.CategoryId,
             Price = x.Price,
-            Tags = string.Join(";", x.Tags!),
+            Tags = string.Join(";", x.Tags!.Select(t => t.Name)),
             Visible = x.Visible
         };
 }

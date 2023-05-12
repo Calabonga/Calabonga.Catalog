@@ -21,5 +21,16 @@ public class ProductMapperConfiguration : Profile
             .ForMember(x => x.CreatedBy, o => o.MapFrom((_, _, _, context) => context.Items[nameof(ApplicationUser)]));
 
         CreateMap<Product, ProductViewModel>();
+
+        CreateMap<ProductUpdateViewModel, Product>()
+            .ForMember(x => x.Id, o => o.Ignore())
+            .ForMember(x => x.Category, o => o.Ignore())
+            .ForMember(x => x.Reviews, o => o.Ignore())
+            .ForMember(x => x.Tags, o => o.Ignore())
+            .ForMember(x => x.Visible, o => o.MapFrom(p => p.Visible))
+            .ForMember(x => x.CreatedAt, o => o.Ignore())
+            .ForMember(x => x.CreatedBy, o => o.Ignore())
+            .ForMember(x => x.UpdatedAt, o => o.Ignore())
+            .ForMember(x => x.UpdatedBy, o => o.MapFrom((_, _, _, context) => context.Items[nameof(ApplicationUser)]));
     }
 }

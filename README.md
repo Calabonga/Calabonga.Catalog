@@ -63,8 +63,9 @@
 	* [x] `Create(ProductCreateViewModel model)` Get
 	* [x] `Create(ProductCreateViewModel model)` Post
 	* [x] `GetById(Guid id)`
-	* [ ] `Update(ProductUpdateViewModel)`
-	* [ ] `Delete(Guid id)`
+	* [x] `Update(ProductUpdateViewModel)`Get
+	* [x] `Update(ProductUpdateViewModel)`Put
+	* [x] `Delete(Guid id)`
 	* [x] `GetMostReviewed(int count = 10)`
 	* [x] `GetMostRated(int count = 10)`
 ---

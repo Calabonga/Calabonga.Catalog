@@ -1,4 +1,4 @@
-﻿using Calabonga.AspNetCore.AppDefinitions;
+using Calabonga.AspNetCore.AppDefinitions;
 using Calabonga.Catalog2023.Web.Application;
 using Calabonga.Catalog2023.Web.Definitions.OpenIddict;
 using Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.Queries;

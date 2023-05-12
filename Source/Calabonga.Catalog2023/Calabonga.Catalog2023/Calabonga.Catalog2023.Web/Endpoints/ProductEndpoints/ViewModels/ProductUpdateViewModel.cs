@@ -1,4 +1,6 @@
-﻿namespace Calabonga.Catalog2023.Web.Endpoints.ProductEndpoints.ViewModels;
+﻿using Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.ViewModels;
+
+namespace Calabonga.Catalog2023.Web.Endpoints.ProductEndpoints.ViewModels;
 
 public class ProductUpdateViewModel
 {
@@ -36,4 +38,9 @@ public class ProductUpdateViewModel
     /// Hidden product should be visible = false
     /// </summary>
     public bool Visible { get; set; }
+
+    /// <summary>
+    /// Categories list for selection on the UI
+    /// </summary>
+    public List<CategoryViewModel>? Categories { get; set; }
 }

@@ -22,9 +22,33 @@ public class ProductEndpoints : AppDefinition
         app.MapGet("/api/products/{id:guid}", GetByIdProduct);
         app.MapGet("/api/products/most-reviewed/{total:int}", GetMostReviewedProducts);
         app.MapGet("/api/products/most-rated/{total:int}", GetMostRatedProducts);
-        app.MapGet("/api/products/edit/{id:guid}", ProductCreateGetForEdit);
-        app.MapPut("/api/products/update", ProductCreatePostAfterEdit);
+        app.MapGet("/api/products/get-for-edit/{id:guid}", ProductGetForEdit);
+        app.MapPut("/api/products/update", ProductPostAfterEdit);
         app.MapDelete("/api/products/delete/{id:guid}", ProductDeleteProduct);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Products")]
+    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    private Task<OperationResult<ProductUpdateViewModel>> ProductGetForEdit(
+        Guid id,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new ProductGetForUpdateRequest(id, context.User), context.RequestAborted);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Products")]
+    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    private Task<OperationResult<ProductViewModel>> ProductPostAfterEdit(
+        [FromBody] ProductUpdateViewModel model,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new ProductPostUpdateRequest(model, context.User), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]
@@ -92,33 +116,9 @@ public class ProductEndpoints : AppDefinition
         [FromServices] IMediator mediator,
         HttpContext context)
     {
-        return Task.FromResult(OperationResult.CreateResult<Guid>());
+        return mediator.Send(new ProductDeleteByIdRequest(id, context.User), context.RequestAborted);
     }
 
-    [ProducesResponseType(200)]
-    [ProducesResponseType(401)]
-    [FeatureGroupName("Products")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
-    private Task<OperationResult<ProductViewModel>> ProductCreatePostAfterEdit(
-        [FromBody] ProductUpdateViewModel model,
-        [FromServices] IMediator mediator,
-        HttpContext context)
-    {
-        return Task.FromResult(OperationResult.CreateResult<ProductViewModel>());
-    }
-
-
-    [ProducesResponseType(200)]
-    [ProducesResponseType(401)]
-    [FeatureGroupName("Products")]
-    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
-    private Task<OperationResult<ProductUpdateViewModel>> ProductCreateGetForEdit(
-        Guid id,
-        [FromServices] IMediator mediator,
-        HttpContext context)
-    {
-        return Task.FromResult(OperationResult.CreateResult<ProductUpdateViewModel>());
-    }
 
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
@@ -128,7 +128,7 @@ public class ProductEndpoints : AppDefinition
         [FromServices] IMediator mediator,
         HttpContext context)
     {
-        return Task.FromResult(OperationResult.CreateResult<ProductViewModel>());
+        return mediator.Send(new ProductGetByIdRequest(id, context.User), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]
