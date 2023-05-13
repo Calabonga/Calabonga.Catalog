@@ -78,11 +78,12 @@
 * [ ] Просмотр всех обзоров должны использоваться разбиение на страницы (paging)
 * [ ] `Review` можно тоже выключить и включить в соответствии со статусом товара, для которого это review написано.
 * [ ] API должна содержать методы CRUD для управления сущностью `Review`:
-	* [ ] `Create(ReviewViewModel model)`
+	* [x] `Create(ReviewCreateViewModel model)` Get
+	* [ ] `Create(ReviewCreateViewModel model)` Post
 	* [ ] `GetById(Guid id)`
 	* [ ] `Update(ReviewUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
-	* [ ] `GetLastReview(int count)`
+	* [ ] `GetLastReviews(int count)`
 	* [ ] `GetPaged(int pageIndex, int pageSize)`
 	* [ ] `GetAll(Guid productId)`
 ---

@@ -32,7 +32,9 @@ namespace Calabonga.Catalog2023.Domain
         /// </summary>
         public virtual Product Product { get; set; } = null!;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Indicate that the entity visible
+        /// </summary>
         public bool Visible { get; set; }
     }
 }
