@@ -79,7 +79,7 @@
 * [ ] `Review` можно тоже выключить и включить в соответствии со статусом товара, для которого это review написано.
 * [ ] API должна содержать методы CRUD для управления сущностью `Review`:
 	* [x] `Create(ReviewCreateViewModel model)` Get
-	* [ ] `Create(ReviewCreateViewModel model)` Post
+	* [x] `Create(ReviewCreateViewModel model)` Post
 	* [ ] `GetById(Guid id)`
 	* [ ] `Update(ReviewUpdateViewModel)`
 	* [ ] `Delete(Guid id)`
