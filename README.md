@@ -80,8 +80,8 @@
 * [ ] API должна содержать методы CRUD для управления сущностью `Review`:
 	* [x] `Create(ReviewCreateViewModel model)` Get
 	* [x] `Create(ReviewCreateViewModel model)` Post
-	* [ ] `GetById(Guid id)`
-	* [ ] `Delete(Guid id)`
+	* [x] `GetById(Guid id)`
+	* [x] `Delete(Guid id)`
 	* [ ] `Update(ReviewUpdateViewModel)` Get
 	* [ ] `Update(ReviewUpdateViewModel)` Post
 	* [ ] `GetLastReviews(int count)`
