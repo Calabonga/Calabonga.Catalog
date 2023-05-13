@@ -57,7 +57,7 @@ public class ProductViewModel
     /// <summary>
     /// The collection of the reviews for current product
     /// </summary>
-    public virtual List<ReviewViewModel>? Reviews { get; set; }
+    public virtual List<ReviewForProductViewModel>? Reviews { get; set; }
 
     /// <summary>
     /// Lined tags

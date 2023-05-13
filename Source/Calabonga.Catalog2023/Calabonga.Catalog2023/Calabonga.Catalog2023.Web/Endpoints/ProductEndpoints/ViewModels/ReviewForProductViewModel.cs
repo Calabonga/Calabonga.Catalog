@@ -1,6 +1,6 @@
 ﻿namespace Calabonga.Catalog2023.Web.Endpoints.ProductEndpoints.ViewModels;
 
-public class ReviewViewModel
+public class ReviewForProductViewModel
 {
     /// <summary>
     /// Identifier

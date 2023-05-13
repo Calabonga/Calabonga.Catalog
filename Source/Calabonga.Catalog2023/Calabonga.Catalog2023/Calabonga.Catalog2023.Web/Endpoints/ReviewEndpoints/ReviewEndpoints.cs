@@ -16,6 +16,8 @@ public class ReviewEndpoints : AppDefinition
     {
         app.MapGet("/api/reviews/get-for-create", ReviewGetForCreate);
         app.MapPost("/api/reviews/create", ReviewPostCreate);
+        app.MapGet("/api/reviews/{id:guid}", ReviewGetById);
+        app.MapDelete("/api/reviews/{id:guid}", ReviewDeleteById);
     }
 
     [ProducesResponseType(200)]
@@ -40,5 +42,31 @@ public class ReviewEndpoints : AppDefinition
         HttpContext context)
     {
         return mediator.Send(new ReviewPostCreateRequest(model, context.User), context.RequestAborted);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Reviews")]
+    private Task<OperationResult<ReviewViewModel>> ReviewGetById
+    (
+        Guid id,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new ReviewGetByIdRequest(id, context.User), context.RequestAborted);
+    }
+
+    [ProducesResponseType(200)]
+    [ProducesResponseType(401)]
+    [FeatureGroupName("Reviews")]
+    [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+
+    private Task<OperationResult<ReviewViewModel>> ReviewDeleteById
+    (
+        Guid id,
+        [FromServices] IMediator mediator,
+        HttpContext context)
+    {
+        return mediator.Send(new ReviewDeleteByIdRequest(id, context.User), context.RequestAborted);
     }
 }

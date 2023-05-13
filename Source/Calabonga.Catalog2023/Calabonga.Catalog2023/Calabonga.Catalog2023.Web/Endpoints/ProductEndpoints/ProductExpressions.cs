@@ -29,8 +29,8 @@ public static class ProductExpressions
             Visible = x.Visible,
 
             Reviews = x.Reviews == null
-                ? new List<ReviewViewModel>()
-                : x.Reviews!.Select(t => new ReviewViewModel
+                ? new List<ReviewForProductViewModel>()
+                : x.Reviews!.Select(t => new ReviewForProductViewModel
                 {
                     Id = t.Id,
                     ProductId = t.ProductId,
