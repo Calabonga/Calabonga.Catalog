@@ -104,7 +104,8 @@ public class ProductEndpoints : AppDefinition
         [FromServices] IMediator mediator,
         HttpContext context)
     {
-        return Task.FromResult(OperationResult.CreateResult<IPagedList<ProductViewModel>>());
+        return mediator.Send(new ProductGetPagedRequest(pageIndex, 10, context.User), context.RequestAborted);
+
     }
 
     [ProducesResponseType(200)]
