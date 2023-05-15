@@ -82,8 +82,8 @@
 	* [x] `Create(ReviewCreateViewModel model)` Post
 	* [x] `GetById(Guid id)`
 	* [x] `Delete(Guid id)`
-	* [ ] `Update(ReviewUpdateViewModel)` Get
-	* [ ] `Update(ReviewUpdateViewModel)` Post
+	* [ ] `Update(Guid id)` Get
+	* [ ] `Update(ReviewUpdateViewModel model)` Post
 	* [ ] `GetLastReviews(int count)`
 	* [ ] `GetPaged(int pageIndex, int pageSize)`
 	* [ ] `GetAll(Guid productId)`
