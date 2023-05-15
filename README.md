@@ -77,16 +77,16 @@
 * [ ] Посмотреть все обзоры для товаров можно лишь только администратору.
 * [ ] Просмотр всех обзоров должны использоваться разбиение на страницы (paging)
 * [ ] `Review` можно тоже выключить и включить в соответствии со статусом товара, для которого это review написано.
-* [ ] API должна содержать методы CRUD для управления сущностью `Review`:
+* [x] API должна содержать методы CRUD для управления сущностью `Review`:
 	* [x] `Create(ReviewCreateViewModel model)` Get
 	* [x] `Create(ReviewCreateViewModel model)` Post
 	* [x] `GetById(Guid id)`
 	* [x] `Delete(Guid id)`
 	* [x] `Update(Guid id)` Get
 	* [x] `Update(ReviewUpdateViewModel model)` Post
-	* [ ] `GetLastReviews(int count)`
-	* [ ] `GetPaged(int pageIndex, int pageSize)`
-	* [ ] `GetAll(Guid productId)`
+	* [x] `GetLastReviews(int count)`
+	* [x] `GetPaged(int pageIndex, int pageSize)`
+	* [x] `GetAll(Guid productId)`
 ---
 ## Сущность "Tag" ("Метка")
 * [x] Один продукт должен иметь одну и более меток (до 8 шт).
@@ -96,8 +96,6 @@
 * [ ] Просмотр всех меток, которые используются в каталоге можно осуществить на странице "Облако меток" (см. `GetCloud()`).
 * [ ] API должна содержать методы CRUD для управления сущностью `Tag`:
 	* [ ] `GetCloud()`
-	* [ ] `Update(TagUpdateViewModel)`
-	* [ ] `Delete(Guid id)`
 ---
 ## Общие требования для сущности Review
 
