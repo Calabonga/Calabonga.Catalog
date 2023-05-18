@@ -18,5 +18,14 @@ public class ReviewMapperConfiguration : Profile
             .ForMember(x => x.UpdatedBy, o => o.Ignore())
             .ForMember(x => x.CreatedBy, o => o.MapFrom((_, _, _, context) => context.Items[nameof(ApplicationUser)]))
             .ForMember(x => x.Visible, o => o.MapFrom(_ => false));
+
+        CreateMap<ReviewUpdateViewModel, Review>()
+            .ForMember(x => x.Id, o => o.Ignore())
+            .ForMember(x => x.Product, o => o.Ignore())
+            .ForMember(x => x.ProductId, o => o.Ignore())
+            .ForMember(x => x.CreatedAt, o => o.Ignore())
+            .ForMember(x => x.CreatedBy, o => o.Ignore())
+            .ForMember(x => x.UpdatedAt, o => o.Ignore())
+            .ForMember(x => x.UpdatedBy, o => o.MapFrom((_, _, _, context) => context.Items[nameof(ApplicationUser)]));
     }
 }
