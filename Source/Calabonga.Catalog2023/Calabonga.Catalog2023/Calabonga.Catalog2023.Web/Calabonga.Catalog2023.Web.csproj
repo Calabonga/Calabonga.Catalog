@@ -37,4 +37,8 @@
     <ProjectReference Include="..\Calabonga.Catalog2023.Infrastructure\Calabonga.Catalog2023.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Endpoints\TagsEndpoints\ViewModels\" />
+  </ItemGroup>
+
 </Project>
