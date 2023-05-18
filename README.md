@@ -84,9 +84,9 @@
 	* [x] `Delete(Guid id)`
 	* [x] `Update(Guid id)` Get
 	* [x] `Update(ReviewUpdateViewModel model)` Post
-	* [ ] `GetLastReviews(int count)`
-	* [ ] `GetPaged(int pageIndex, int pageSize)`
-	* [ ] `GetAll(Guid productId)`
+	* [x] `GetLastReviews(int count)`
+	* [x] `GetPaged(int pageIndex, int pageSize)`
+	* [x] `GetAll(Guid productId)`
 ---
 ## Сущность "Tag" ("Метка")
 * [x] Один продукт должен иметь одну и более меток (до 8 шт).
