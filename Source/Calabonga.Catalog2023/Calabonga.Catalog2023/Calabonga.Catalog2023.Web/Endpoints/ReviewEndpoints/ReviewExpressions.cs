@@ -27,4 +27,23 @@ public static class ReviewExpressions
             Visible = x.Visible,
             UserName = x.UserName
         };
+
+    /// <summary>
+    /// Projection from Category to CategoryViewModel
+    /// </summary>
+    public static Expression<Func<Review, ReviewWithProductViewModel>> WithProductName
+        => x => new ReviewWithProductViewModel
+        {
+            Id = x.Id,
+            ProductName = x.Product.Name,
+            ProductId = x.ProductId,
+            Rating = x.Rating,
+            Content = x.Content,
+            CreatedAt = x.CreatedAt,
+            CreatedBy = x.CreatedBy,
+            UpdatedAt = x.UpdatedAt,
+            UpdatedBy = x.UpdatedBy,
+            Visible = x.Visible,
+            UserName = x.UserName
+        };
 }
