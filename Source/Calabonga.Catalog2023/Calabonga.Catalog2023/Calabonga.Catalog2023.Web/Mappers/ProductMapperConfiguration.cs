@@ -22,6 +22,8 @@ public class ProductMapperConfiguration : Profile
 
         CreateMap<Product, ProductViewModel>();
 
+        CreateMap<Review, ReviewForProductViewModel>();
+
         CreateMap<ProductUpdateViewModel, Product>()
             .ForMember(x => x.Id, o => o.Ignore())
             .ForMember(x => x.Category, o => o.Ignore())
