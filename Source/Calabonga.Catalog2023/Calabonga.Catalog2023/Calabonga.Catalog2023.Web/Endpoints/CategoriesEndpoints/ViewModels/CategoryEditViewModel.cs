@@ -1,7 +1,10 @@
 ﻿namespace Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.ViewModels;
 
-public class CategoryUpdateViewModel
+public class CategoryEditViewModel
 {
+    /// <summary>
+    /// Identifier
+    /// </summary>
     public Guid Id { get; set; }
 
     /// <summary>
@@ -14,7 +17,10 @@ public class CategoryUpdateViewModel
     /// </summary>
     public string? Description { get; set; }
 
-    public bool Visible { get; set; }
+    /// <summary>
+    /// Total items in category
+    /// </summary>
+    public int ProductCount { get; set; }
 
     /// <summary>
     /// Restore visibility
