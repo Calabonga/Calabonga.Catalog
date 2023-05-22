@@ -69,16 +69,6 @@ public class ProductPostUpdate
 				return operation;
 			}
 
-			if (currentState && newState == false)
-			{
-				await _mediator.Publish(new ProductHide.Notification(entity.Id, request.User), cancellationToken);
-			}
-
-			if (!currentState && newState)
-			{
-				await _mediator.Publish(new ProductShow.Notification(entity.Id, request.User), cancellationToken);
-			}
-
 			var calculation = await _tagCalculator.ProcessTagsAsync(
 				request.Model.Tags.Split(new[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
 				entity,
@@ -101,6 +91,16 @@ public class ProductPostUpdate
 
 				operation.AddError(exception);
 				return operation;
+			}
+
+			if (currentState && newState == false)
+			{
+				await _mediator.Publish(new ProductHide.Notification(entity.Id, request.User), cancellationToken);
+			}
+
+			if (!currentState && newState)
+			{
+				await _mediator.Publish(new ProductShow.Notification(entity.Id, request.User), cancellationToken);
 			}
 
 			var result = _mapper.Map<ProductViewModel>(entity);
