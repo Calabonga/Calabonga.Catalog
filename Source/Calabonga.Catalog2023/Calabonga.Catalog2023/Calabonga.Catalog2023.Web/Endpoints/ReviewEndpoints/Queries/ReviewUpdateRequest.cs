@@ -54,6 +54,13 @@ namespace Calabonga.Catalog2023.Web.Endpoints.ReviewEndpoints.Queries
 				return operation;
 			}
 
+			if (!entity.Product!.Visible && entity.Visible)
+			{
+				entity.Visible = false;
+				operation.AddError(new CatalogInvalidOperationException("Unable to set visibility for review", "product is disabled"));
+				return operation;
+			}
+
 			_mapper.Map(request.Model, entity,
 				o => o.Items[nameof(ApplicationUser)] = request.User.Identity!.Name);
 

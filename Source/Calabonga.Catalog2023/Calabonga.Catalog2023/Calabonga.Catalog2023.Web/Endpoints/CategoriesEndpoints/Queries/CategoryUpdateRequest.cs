@@ -1,5 +1,6 @@
 ﻿using Calabonga.Catalog2023.Domain;
 using Calabonga.Catalog2023.Domain.Base;
+using Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.Notifications;
 using Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.ViewModels;
 using Calabonga.Catalog2023.Web.Exceptions;
 using Calabonga.OperationResults;
@@ -10,108 +11,82 @@ using System.Security.Claims;
 namespace Calabonga.Catalog2023.Web.Endpoints.CategoriesEndpoints.Queries;
 
 public record CategoryUpdateRequest(CategoryUpdateViewModel Model, ClaimsPrincipal User)
-    : IRequest<OperationResult<CategoryEditViewModel>>;
+	: IRequest<OperationResult<CategoryEditViewModel>>;
 
 public class CategoryUpdateRequestHandler
-    : IRequestHandler<CategoryUpdateRequest, OperationResult<CategoryEditViewModel>>
+	: IRequestHandler<CategoryUpdateRequest, OperationResult<CategoryEditViewModel>>
 {
-    private readonly IUnitOfWork _unitOfWork;
+	private readonly IMediator _mediator;
+	private readonly IUnitOfWork _unitOfWork;
 
-    public CategoryUpdateRequestHandler(IUnitOfWork unitOfWork)
-    {
-        _unitOfWork = unitOfWork;
-    }
+	public CategoryUpdateRequestHandler(
+		IMediator mediator,
+		IUnitOfWork unitOfWork)
+	{
+		_mediator = mediator;
+		_unitOfWork = unitOfWork;
+	}
 
-    public async Task<OperationResult<CategoryEditViewModel>> Handle(CategoryUpdateRequest request, CancellationToken cancellationToken)
-    {
-        var operation = OperationResult.CreateResult<CategoryEditViewModel>();
+	public async Task<OperationResult<CategoryEditViewModel>> Handle(CategoryUpdateRequest request, CancellationToken cancellationToken)
+	{
+		var operation = OperationResult.CreateResult<CategoryEditViewModel>();
 
-        if (!request.User.IsInRole(AppData.SystemAdministratorRoleName))
-        {
-            operation.AddError(new CatalogAccessDeniedException());
-            return operation;
-        }
+		if (!request.User.IsInRole(AppData.SystemAdministratorRoleName))
+		{
+			operation.AddError(new CatalogAccessDeniedException());
+			return operation;
+		}
 
-        var repository = _unitOfWork.GetRepository<Category>();
-        var item = await repository.GetFirstOrDefaultAsync(
-            predicate: x => x.Id == request.Model.Id,
-            ignoreAutoIncludes: true,
-            ignoreQueryFilters: request.User.IsInRole(AppData.SystemAdministratorRoleName));
+		var repository = _unitOfWork.GetRepository<Category>();
+		var item = await repository.GetFirstOrDefaultAsync(
+			predicate: x => x.Id == request.Model.Id,
+			ignoreAutoIncludes: true,
+			ignoreQueryFilters: request.User.IsInRole(AppData.SystemAdministratorRoleName));
 
-        if (item == null)
-        {
-            operation.AddError(new CatalogNotFoundException(nameof(Category), request.Model.Id.ToString()));
-            return operation;
-        }
+		if (item == null)
+		{
+			operation.AddError(new CatalogNotFoundException(nameof(Category), request.Model.Id.ToString()));
+			return operation;
+		}
 
-        var currentState = item.Visible;
-        var newState = request.Model.Visible;
+		var currentState = item.Visible;
+		var newState = request.Model.Visible;
 
-        item.Visible = request.Model.Visible;
-        item.Description = request.Model.Description;
-        item.Name = request.Model.Name;
+		item.Visible = request.Model.Visible;
+		item.Description = request.Model.Description;
+		item.Name = request.Model.Name;
 
-        repository.Update(item);
+		repository.Update(item);
 
-        await _unitOfWork.SaveChangesAsync();
+		await _unitOfWork.SaveChangesAsync();
 
-        if (!_unitOfWork.LastSaveChangesResult.IsOk)
-        {
-            var exception = _unitOfWork.LastSaveChangesResult.Exception
-                            ?? new CatalogDatabaseSaveException(nameof(Category));
+		if (!_unitOfWork.LastSaveChangesResult.IsOk)
+		{
+			var exception = _unitOfWork.LastSaveChangesResult.Exception
+							?? new CatalogDatabaseSaveException(nameof(Category));
 
-            operation.AddError(exception);
-            return operation;
-        }
+			operation.AddError(exception);
+			return operation;
+		}
 
-        if (currentState && newState == false)
-        {
-            var productRepository = _unitOfWork.GetRepository<Product>();
-            var products = productRepository
-                .GetAll(
-                    predicate: x => x.CategoryId == item.Id && x.Visible == true,
-                    disableTracking: false,
-                    ignoreAutoIncludes: true,
-                    ignoreQueryFilters: request.User.IsInRole(AppData.SystemAdministratorRoleName))
-                .ToList();
+		if (currentState && newState == false)
+		{
+			await _mediator.Publish(new CategoryHide.Notification(item.Id, request.User), cancellationToken);
+		}
 
-            if (products.Any())
-            {
-                products.ForEach(x => x.Visible = newState);
-                productRepository.Update(products);
-                await _unitOfWork.SaveChangesAsync();
-            }
-        }
+		if (newState && request.Model.IsRestoreProducts)
+		{
+			await _mediator.Publish(new CategoryShow.Notification(item.Id, request.User), cancellationToken);
+		}
 
-        if (!currentState && newState && request.Model.IsRestoreProducts)
-        {
-            var productRepository = _unitOfWork.GetRepository<Product>();
-            var products = productRepository
-                .GetAll(
-                    predicate: x => x.CategoryId == item.Id && x.Visible == false,
-                    disableTracking: false,
-                    ignoreAutoIncludes: true,
-                    ignoreQueryFilters: request.User.IsInRole(AppData.SystemAdministratorRoleName))
-                .ToList();
+		operation.Result = new CategoryEditViewModel
+		{
+			Description = item.Description,
+			Id = item.Id,
+			Name = item.Name,
+			ProductCount = 0
+		};
 
-            if (products.Any())
-            {
-                products.ForEach(x => x.Visible = newState);
-                productRepository.Update(products);
-                await _unitOfWork.SaveChangesAsync();
-            }
-
-
-        }
-
-        operation.Result = new CategoryEditViewModel
-        {
-            Description = item.Description,
-            Id = item.Id,
-            Name = item.Name,
-            ProductCount = 0
-        };
-
-        return operation;
-    }
+		return operation;
+	}
 }
