@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Calabonga.Catalog2023.Web.Endpoints.ReviewEndpoints;
 
-public class ReviewPutUpdateRequestValidator : AbstractValidator<ReviewPutUpdateRequest>
+public class ReviewPutUpdateRequestValidator : AbstractValidator<ReviewUpdateRequest>
 {
     public ReviewPutUpdateRequestValidator()
     {
