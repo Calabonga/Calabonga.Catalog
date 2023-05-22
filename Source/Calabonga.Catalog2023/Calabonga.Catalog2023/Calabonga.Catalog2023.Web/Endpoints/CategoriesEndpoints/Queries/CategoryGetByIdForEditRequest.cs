@@ -32,6 +32,7 @@ public class CategoryGetByIdForEditRequestHandler
         var item = await _unitOfWork.GetRepository<Category>()
             .GetFirstOrDefaultAsync(
                 selector: CategoryExpressions.ForEdit,
+                predicate: x => x.Id == request.CategoryId,
                 ignoreQueryFilters: request.User.IsInRole(AppData.SystemAdministratorRoleName)
             );
 

@@ -51,7 +51,7 @@ public class CategoryEndpoints : AppDefinition
     [ProducesResponseType(401)]
     [FeatureGroupName("Categories")]
     [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
-    private Task<OperationResult<CategoryViewModel>> CategoryCreatePostAfterEdit(
+    private Task<OperationResult<CategoryEditViewModel>> CategoryCreatePostAfterEdit(
         [FromBody] CategoryUpdateViewModel model,
         [FromServices] IMediator mediator,
         HttpContext context)

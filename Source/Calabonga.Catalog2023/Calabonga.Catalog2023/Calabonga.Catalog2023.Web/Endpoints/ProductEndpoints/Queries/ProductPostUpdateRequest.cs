@@ -53,6 +53,13 @@ public class ProductPostUpdateRequestHandler
         _mapper.Map(request.Model, entity,
             o => o.Items[nameof(ApplicationUser)] = request.User.Identity!.Name);
 
+        if (!entity.Category!.Visible && entity.Visible)
+        {
+            entity.Visible = false;
+            operation.AddError(new CatalogInvalidOperationException("Unable to enable Product", "Catalog is disabled"));
+            return operation;
+        }
+
         var calculation = await _tagCalculator.ProcessTagsAsync(
             request.Model.Tags.Split(new[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
             entity,
