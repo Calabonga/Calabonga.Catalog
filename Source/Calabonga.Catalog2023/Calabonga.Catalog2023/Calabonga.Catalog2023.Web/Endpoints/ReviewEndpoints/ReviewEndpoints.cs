@@ -69,7 +69,7 @@ public class ReviewEndpoints : AppDefinition
         [FromServices] IMediator mediator,
         HttpContext context)
     {
-        return mediator.Send(new ReviewPutUpdateRequest(model, context.User), context.RequestAborted);
+        return mediator.Send(new ReviewUpdateRequest(model, context.User), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]
@@ -104,7 +104,7 @@ public class ReviewEndpoints : AppDefinition
         [FromServices] IMediator mediator,
         HttpContext context)
     {
-        return mediator.Send(new ReviewPostCreateRequest(model, context.User), context.RequestAborted);
+        return mediator.Send(new ReviewCreateRequest(model, context.User), context.RequestAborted);
     }
 
     [ProducesResponseType(200)]
